@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import defaultTheme from "tailwindcss/defaultTheme";
 
 const config: Config = {
   content: [
@@ -179,6 +180,10 @@ const config: Config = {
           "950": "#BBEFB6",
           DEFAULT: "#BBEFB6",
         },
+      },
+      fontFamily: {
+        sans: ["var(--font-dm-sans)", ...defaultTheme.fontFamily.sans],
+        serif: ["var(--font-host-grotesk)", ...defaultTheme.fontFamily.serif],
       },
     },
   },
