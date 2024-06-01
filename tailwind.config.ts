@@ -9,6 +9,7 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: require("./tailwind.screens"),
       colors: {
         "blue-dark": {
           "100": "#E5E7E9",
