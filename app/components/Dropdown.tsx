@@ -1,0 +1,162 @@
+"use client";
+import { useState } from "react";
+import { capitalize } from "../lib/helpers";
+import { tw } from "../lib/tailwindest";
+const select = tw.style({
+  ":active": {
+    borderColor: "active:border-sky",
+    borderWidth: "active:border-[1.5px]",
+    borderStyle: "active:border-solid",
+    backgroundColor: "active:bg-white",
+    color: "active:text-blue-dark-600",
+  },
+  ":focus": {
+    borderColor: "focus:border-sky",
+    borderWidth: "focus:border-[1.5px]",
+    borderStyle: "focus:border-solid",
+    backgroundColor: "focus:bg-white",
+    color: "focus:text-blue-dark-600",
+  },
+  color: "text-blue-dark-300",
+  outlineStyle: "outline-none",
+  fontSize: "text-sm",
+  paddingY: "py-[13px]",
+  paddingX: "px-[24px]",
+  display: "flex",
+  justifyContent: "justify-between",
+  maxWidth: "max-w-[255px]",
+  alignItems: "items-center",
+  borderRadius: "rounded-3xl",
+  position: "relative",
+  backgroundColor: "bg-gray-300",
+});
+
+const selectedItem = tw.style({
+  fontSize: "text-[15px]",
+  paddingLeft: "pl-1",
+});
+
+const arrow = tw.toggle({
+  truthy: {
+    transformRotate: "rotate-180",
+  },
+  falsy: {},
+  base: {
+    stroke: "stroke-blue-dark",
+    transition: "transition ease-out",
+    width: "w-2.5",
+    height: "h-2.5",
+  },
+});
+const dropdown = tw.toggle({
+  truthy: {
+    opacity: "opacity-100",
+    position: "absolute",
+    zIndex: "z-50",
+    marginTop: "mt-[55px]",
+  },
+  falsy: {
+    opacity: "opacity-0",
+    height: "h-0",
+    width: "w-0",
+    zIndex: "-z-50",
+  },
+  base: {
+    transition: "transition ease-in-out",
+    maxWidth: "max-w-[16.5rem]",
+    backgroundColor: "bg-white",
+    boxShadow: "shadow-lg",
+    filterDropShadow: "drop-shadow-sm",
+    borderRadius: "rounded-2xl",
+  },
+});
+
+const dropdownList = tw.style({
+  paddingY: "py-2",
+  color: "text-blue-dark-600",
+});
+
+const dropdownListItem = tw.style({
+  borderRadius: "rounded-lg",
+  width: "w-[16rem]",
+  display: "flex",
+  justifyContent: "justify-between",
+  alignItems: "items-center",
+  paddingX: "px-[.5em]",
+});
+
+const selectContainer = tw.style({
+  display: "flex",
+  flexDirection: "flex-col",
+});
+
+export function Dropdown({
+  onChange,
+  options,
+  defaultOption,
+}: {
+  onChange?: (option: string) => void;
+  defaultOption?: string;
+  options: string[];
+}) {
+  const [selected, setSelected] = useState<string>(defaultOption ?? options[0]);
+  const [showDropdown, setShowDropdown] = useState<boolean>(false);
+  const handleClickItem = (selected: string) => {
+    setShowDropdown(false);
+    setSelected(selected);
+    if (onChange) onChange(selected);
+  };
+  return (
+    <div className={selectContainer.class}>
+      <button
+        onClick={() => setShowDropdown(!showDropdown)}
+        className={select.class}
+      >
+        <span className={selectedItem.class}>
+          {selected
+            .split("_")
+            .map((w) => capitalize(w))
+            .join(" ")}
+        </span>
+        <svg
+          className={arrow.class(showDropdown)}
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 10 6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="m1 1 4 4 4-4"
+          />
+        </svg>
+      </button>
+
+      <div className={dropdown.class(showDropdown)}>
+        <ul className={dropdownList.class}>
+          {options.map((o) => (
+            <li
+              onClick={(e) => {
+                e.preventDefault();
+                handleClickItem(o);
+              }}
+              className={dropdownListItem.class}
+              key={o}
+            >
+              <a
+                className={`block py-2 hover:bg-gray-300 ${o === selected ? "!bg-sky-400 text-blue-dark" : ""}  rounded-lg w-full px-[.5em]`}
+              >
+                {o
+                  .split("_")
+                  .map((w) => capitalize(w))
+                  .join(" ")}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
