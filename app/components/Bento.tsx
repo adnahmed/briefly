@@ -253,7 +253,7 @@ const bento_desc = tw.variants({
 export const BentoSquare = ({
   type = "brief",
 }: {
-  type?: "brief" | "analytic" | "management" | "marketplace";
+  type: "brief" | "analytic" | "management" | "marketplace";
 }) => {
   const tablet = useBreakpoint("tablet");
   let image_src = "";
