@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${dm_sans.className} ${host_grotesk.style}`}>
+      <body className={`${dm_sans.className} ${host_grotesk.className}`}>
         {children}
       </body>
     </html>
