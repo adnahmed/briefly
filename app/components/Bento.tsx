@@ -273,7 +273,7 @@ export const BentoSquare = ({
         "Empower your projects with AI-driven briefs that streamline communication and ensure clarity, accuracy, and efficiency.";
       break;
     case "analytic":
-      image_src = "/bars-chart@2x.png";
+      image_src = "/bars.webp";
       width = tablet ? 308.8 : 240;
       height = tablet ? 308.8 : 240;
       title = "Analytic Analysis";
