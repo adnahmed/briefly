@@ -3,7 +3,6 @@ import { ChevronRight } from "./ChevronRight";
 import { ProfileIcon } from "./Profile";
 const button = tw.rotary({
   base: {
-    margin: "m-2",
     display: "flex",
     borderRadius: "rounded-3xl",
     borderWidth: "border-2",
