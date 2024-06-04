@@ -31,18 +31,22 @@ const button = tw.rotary({
   },
   primary: {
     backgroundColor: "bg-blue-950",
+    borderColor: "border-blue-950",
     color: "text-white",
     stroke: "stroke-white",
     ":active": {
       color: "active:text-white",
       stroke: "active:stroke-white",
       backgroundColor: "active:bg-blue",
+      borderColor: "active:border-blue",
     },
     ":hover": {
       backgroundColor: "hover:bg-blue-700",
+      borderColor: "hover:border-blue-700",
     },
     ":disabled": {
       backgroundColor: "disabled:bg-gray-300",
+      borderColor: "disabled:border-gray-300",
     },
   },
   secondary: {
@@ -126,7 +130,7 @@ function Button(props: TextButtonLeftIcon | TextButtonRightIcon) {
                     : undefined,
                 paddingY: "py-[1rem]",
                 maxWidth: icon
-                  ? "max-w-[104px]"
+                  ? undefined
                   : leftIcon
                     ? "max-w-[114px]"
                     : "max-w-[96px]",
