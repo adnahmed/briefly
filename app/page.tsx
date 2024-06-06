@@ -1,10 +1,14 @@
 'use client'
+import { AIBrainChip } from "./components/AIBrainChip";
 import { BentoSquare } from "./components/Bento";
+import { HeroGetStarted } from "./components/Hero";
+import PlayButton from "./components/PlayButton";
 export default function Home() {
   return <main>
-    <BentoSquare type="brief" />
+
+    <AIBrainChip/>
+    {/* <BentoSquare type="brief" />
     <BentoSquare type="analytic" />
-    <BentoSquare type="management" />
-    <BentoSquare type="marketplace" />
+    <BentoSquare type="management" /> */}
   </main>;
 }
