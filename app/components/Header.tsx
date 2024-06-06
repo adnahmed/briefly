@@ -5,9 +5,10 @@ import { HeroButton } from "./Hero";
 
 const header = tw.style({
     display: 'flex',
-    width: 'w-[120rem]',
+    width: 'w-full',
     paddingY: 'py-[1rem]',
     paddingX: 'px-[13rem]',
+    justifyContent: 'justify-between',
     gap: 'gap-[26rem]'
 })
 

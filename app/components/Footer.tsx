@@ -1,8 +1,6 @@
 import Image from "next/image";
 import { tw } from "../lib/tailwindest";
 const footer = tw.style({
-    paddingLeft: 'pl-[21rem]',
-    paddingRight: 'pr-[21.06rem]',
     paddingTop: 'pt-[4rem]',
     paddingBottom: 'pb-[1rem]',
     gap: 'gap-[1.53rem]',
@@ -11,7 +9,17 @@ const footer = tw.style({
     borderTopRadius: 'rounded-t-[5rem]',
     backgroundColor: 'bg-blue-950',
     height: 'h-[16rem]',
-    width: 'w-[120rem]',
+    width: 'w-full',
+    paddingLeft: 'pl-[3rem]',
+    paddingRight: 'pr-[3.06rem]',
+    '@desktop': {
+        paddingLeft: 'desktop:pl-[14rem]',
+        paddingRight: 'desktop:pr-[14.06rem]',
+    },
+    '@screen': {
+        paddingLeft: 'screen:pl-[21rem]',
+        paddingRight: 'screen:pr-[21.06rem]',
+    }
 });
 
 const footerStart = tw.style({
@@ -43,27 +51,27 @@ const heroButtons = tw.style({
 });
 
 const heroButton = tw.style({
-  color: "text-white",
-  padding: "p-[1rem]",
-  height: "h-[3rem]",
-  width: 'w-max',
-  fontWeight: "font-medium",
-  ":hover": {
-    color: "hover:text-sky",
-  },
-  ":active": {
-    color: "active:text-sky",
-  },
+    color: "text-white",
+    padding: "p-[1rem]",
+    height: "h-[3rem]",
+    width: 'w-max',
+    fontWeight: "font-medium",
+    ":hover": {
+        color: "hover:text-sky",
+    },
+    ":active": {
+        color: "active:text-sky",
+    },
 });
 export const Footer = () => {
     return (
         <div className={footer.class}>
             <div className={footerStart.class}>
                 <div className={business_logo.class}>
-                <Image src={'/named_logo.svg'} width={176} height={56} alt="logo" />
-                <span className="-tracking-[.03rem] leading-[1.48rem] min-w-max text-white">
-        Your platform to grow your business.
-                </span>
+                    <Image src={'/named_logo.svg'} width={176} height={56} alt="logo" />
+                    <span className="-tracking-[.03rem] leading-[1.48rem] min-w-max text-white">
+                        Your platform to grow your business.
+                    </span>
                 </div>
                 <div className={heroButtons.class}>
                     <div className={heroButton.class}>Platform</div>
