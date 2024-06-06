@@ -1,7 +1,7 @@
 import { createTools, Tailwindest } from "tailwindest";
 
 export type TailwindCustom = Tailwindest<{
-  screens: "tablet" | "mobile" | "desktop";
+  screens: "tablet" | "mobile" | "desktop" | "screen";
   color:
     | "blue-dark"
     | "blue-dark-100"
