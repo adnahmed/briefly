@@ -74,6 +74,7 @@ const heroButton = tw.style({
   color: "text-[#5A6772]",
   padding: "p-[1rem]",
   height: "h-[3rem]",
+  width: 'w-max',
   fontWeight: "font-medium",
   ":hover": {
     color: "hover:text-blue-950",
