@@ -128,11 +128,6 @@ function Button(props: TextButtonLeftIcon | TextButtonRightIcon) {
                     ? "pr-[1rem]"
                     : undefined,
                 paddingY: "py-[1rem]",
-                maxWidth: icon
-                  ? undefined
-                  : leftIcon
-                    ? "max-w-[114px]"
-                    : "max-w-[96px]",
               }
             : {
                 borderRadius: "rounded-[1.75rem]",
