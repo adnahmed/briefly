@@ -1,4 +1,4 @@
-import { ChangeEventHandler, MouseEventHandler } from "react";
+import { MouseEventHandler } from "react";
 import { tw } from "../lib/tailwindest";
 import { useBreakpoint } from "../lib/useBreakpoint";
 import { ChevronRight } from "./ChevronRight";
@@ -23,13 +23,9 @@ const heroGetStarted = tw.style({
   margin: "m-2",
 });
 
-export const HeroGetStarted = ({
-  onClick,
-}: {
-  onClick?: MouseEventHandler<HTMLButtonElement>;
-}) => {
+export const HeroGetStarted = () => {
   return (
-    <button onClick={onClick} className={heroGetStarted.class}>
+    <button type="submit" className={heroGetStarted.class}>
       Get Started
       <ChevronRight />
     </button>
@@ -37,12 +33,16 @@ export const HeroGetStarted = ({
 };
 
 const heroInputEmail = tw.style({
-  borderRadius: "rounded-2xl",
-  width: "w-[256px]",
+  borderRadius: "rounded-3xl",
+  maxWidth: "max-w-[256px]",
   height: "h-[3rem]",
   padding: "p-[1rem]",
   "::placeholder": {
     color: "placeholder:text-blue-dark-300",
+  },
+  ":invalid": {
+    borderColor: "invalid:border-red-900",
+    borderWidth: "invalid:border-2",
   },
   backgroundColor: "bg-[#F6F6F6]",
   color: "text-blue-dark-300",
@@ -53,19 +53,13 @@ const heroInputEmail = tw.style({
   },
 });
 
-export const HeroInputEmail = ({
-  value,
-  onChange,
-}: {
-  value: string;
-  onChange?: ChangeEventHandler<HTMLInputElement>;
-}) => {
+export const HeroInputEmail = () => {
   return (
     <input
       className={heroInputEmail.class}
-      placeholder="Enter your email address"
-      value={value}
-      onChange={onChange}
+      placeholder="Enter your email"
+      type="email"
+      name="email"
     />
   );
 };
@@ -74,7 +68,7 @@ const heroButton = tw.style({
   color: "text-[#5A6772]",
   padding: "p-[1rem]",
   height: "h-[3rem]",
-  width: 'w-max',
+  width: "w-max",
   fontWeight: "font-medium",
   ":hover": {
     color: "hover:text-blue-950",
