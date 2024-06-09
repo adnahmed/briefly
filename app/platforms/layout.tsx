@@ -30,7 +30,9 @@ export default function RootLayout({
       <body className={`${dm_sans.className} ${host_grotesk.className}`}>
         <Header />
         {children}
-        <Footer />
+        <div className="bg-gray-950">
+          <Footer />
+        </div>
       </body>
     </html>
   );
