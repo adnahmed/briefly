@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import localFont from "next/font/local";
-import { Footer } from "./components/Footer";
+import { FooterWithTarget } from "./components/FooterWithTarget";
 import { Header } from "./components/Header";
 import "./globals.css";
 
@@ -30,7 +30,11 @@ export default function RootLayout({
       <body className={`${dm_sans.className} ${host_grotesk.className}`}>
         <Header />
         {children}
-        <Footer />
+        <FooterWithTarget
+          title="Let’s build your dream team!"
+          description="We’ll connect you with the expertise you need to ensure it’s a perfect match made for business."
+          action="Get Started"
+        />
       </body>
     </html>
   );
