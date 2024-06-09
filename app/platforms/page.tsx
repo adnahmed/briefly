@@ -5,7 +5,7 @@ export default function Page() {
   return (
     <main>
       <div className="relative  h-[45rem] bg-[#FFF9F4] w-full flex items-start justify-start py-[16rem]">
-        <div className="w-[38rem] tablet:w-[30rem] ml-[21rem] flex flex-col gap-[1rem]">
+        <div className="w-[38rem] z-10 tablet:w-[30rem] ml-[21rem] flex flex-col gap-[1rem]">
           <div className="font-serif font-bold leading-[2.9375rem] -tracking-[.1rem] text-[2.5rem]">
             <span>One powerful platfrom.</span>
             <div>

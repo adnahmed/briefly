@@ -35,12 +35,20 @@ const button = tw.rotary({
     borderColor: "border-orange-200",
     color: "text-orange",
     stroke: "stroke-orange",
+    ":active": {
+      color: "active:text-orange",
+      stroke: "active:stroke-orange",
+    },
   },
   platform: {
     backgroundColor: "bg-orange",
     borderColor: "border-orange",
     color: "text-white",
     stroke: "stroke-white",
+    ":active": {
+      color: "active:text-white",
+      stroke: "active:stroke-white",
+    },
   },
   primary: {
     backgroundColor: "bg-blue-950",
