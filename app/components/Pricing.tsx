@@ -67,6 +67,34 @@ const pricingContainer = tw.variants({
     },
   },
 });
+const tagButton = tw.variants({
+  base: {
+    borderRadius: "rounded-3xl",
+    display: "flex",
+    justifyContent: "justify-center",
+    alignItems: "items-center",
+    textAlign: "text-center",
+    height: "h-[1.5rem]",
+    width: "w-[6rem]",
+    fontFamily: "font-serif",
+    lineHeight: "leading-[2.5625rem]",
+    letterSpacing: "tracking-[-0.0325rem]",
+    fontSize: "text-[.8125rem]",
+  },
+  variants: {
+    type: {
+      starter: {},
+      basic: {},
+      explorer: {
+        backgroundColor: "bg-green-light",
+      },
+      pro: {
+        backgroundColor: "bg-purple",
+        color: "text-white",
+      },
+    },
+  },
+});
 export const Pricing = ({
   type,
 }: {
@@ -133,8 +161,11 @@ export const Pricing = ({
         <div className={corner.class({ type })}></div>
         <div className="w-[14.5rem] flex gap-[.5rem] flex-col">
           <div>
-            <div className="font-serif leading-[2.5625rem] -tracking-[.05rem] font-bold text-[1.25rem]">
-              {capitalize(type)}
+            <div className="flex justify-between">
+              <div className="font-serif leading-[2.5625rem] -tracking-[.05rem] font-bold text-[1.25rem]">
+                {capitalize(type)}
+              </div>
+              <div className={tagButton.class({ type })}>{tag}</div>
             </div>
             <div className="text-[.875rem] leading-[1.295rem] -tracking-[.02625rem]">
               {description}
