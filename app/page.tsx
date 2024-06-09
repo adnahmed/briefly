@@ -95,7 +95,7 @@ export default function Home() {
         </div>
         <div className="flex flex-col justify-center items-center text-[2.5rem] leading-[2.5625rem] -tracking-[.1rem]">
           <h3>Your business essentials,</h3>
-          <h3 className="bg-colorful-wave bg-clip-text text-transparent">
+          <h3 className="colorful-wave bg-clip-text text-transparent">
             all in one place
           </h3>
         </div>

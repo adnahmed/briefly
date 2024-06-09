@@ -44,3 +44,7 @@ h3 {
 .p3 {
   @apply text-sm font-sans -tracking-[.02625rem] font-normal leading-[1.295rem];
 }
+
+.colorful-wave {
+  background-image: linear-gradient(91deg, #1E6EE2 0.79%, #FF97F0 33.71%, #FF8533 51.89%, #BBEFB6 84.36%);
+}

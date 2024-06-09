@@ -187,10 +187,6 @@ const config: Config = {
         serif: ["var(--font-host-grotesk)", ...defaultTheme.fontFamily.serif],
       },
     },
-    backgroundImage: {
-      "colorful-wave":
-        "linear-gradient(91deg, #1E6EE2 0.79%, #FF97F0 33.71%, #FF8533 51.89%, #BBEFB6 84.36%)",
-    },
   },
   plugins: [],
 };
