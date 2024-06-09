@@ -43,7 +43,7 @@ export default function Page() {
             Get early access
           </Button>
         </div>
-        <div className="flex flex-col gap-[1rem]">
+        <div className="flex flex-col gap-[1rem] mt-[9.37rem] mb-[4.69rem]">
           <Feature
             icon="/f_1.png"
             title="Matchmaking marketplace"
