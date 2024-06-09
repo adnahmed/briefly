@@ -137,9 +137,9 @@ export const HeroBackground = () => (
         width="2271"
         height="2740"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -158,9 +158,9 @@ export const HeroBackground = () => (
         width="1149"
         height="1118"
         filterUnits="userSpaceOnUse"
-        color-interpolation-filters="sRGB"
+        colorInterpolationFilters="sRGB"
       >
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+        <feFlood floodOpacity="0" result="BackgroundImageFix" />
         <feBlend
           mode="normal"
           in="SourceGraphic"
@@ -180,7 +180,7 @@ export const HeroBackground = () => (
         y2="460.922"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="#1E6EE2" stop-opacity="0" />
+        <stop stopColor="#1E6EE2" stopOpacity="0" />
         <stop offset="1" stopColor="#1E6EE2" />
       </linearGradient>
       <linearGradient
@@ -191,7 +191,7 @@ export const HeroBackground = () => (
         y2="629.08"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="#1E6EE2" stop-opacity="0" />
+        <stop stopColor="#1E6EE2" stopOpacity="0" />
         <stop offset="1" stopColor="#1E6EE2" />
       </linearGradient>
       <linearGradient
@@ -202,7 +202,7 @@ export const HeroBackground = () => (
         y2="629.08"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="#1E6EE2" stop-opacity="0" />
+        <stop stopColor="#1E6EE2" stopOpacity="0" />
         <stop offset="1" stopColor="#1E6EE2" />
       </linearGradient>
       <linearGradient
@@ -213,7 +213,7 @@ export const HeroBackground = () => (
         y2="139"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="#99CCFF" stop-opacity="0" />
+        <stop stopColor="#99CCFF" stopOpacity="0" />
         <stop offset="1" stopColor="#99CCFF" />
       </linearGradient>
       <linearGradient
@@ -224,7 +224,7 @@ export const HeroBackground = () => (
         y2="279.5"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="#99CCFF" stop-opacity="0" />
+        <stop stopColor="#99CCFF" stopOpacity="0" />
         <stop offset="1" stopColor="#99CCFF" />
       </linearGradient>
       <linearGradient
@@ -235,7 +235,7 @@ export const HeroBackground = () => (
         y2="418.5"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="#99CCFF" stop-opacity="0" />
+        <stop stopColor="#99CCFF" stopOpacity="0" />
         <stop offset="1" stopColor="#99CCFF" />
       </linearGradient>
       <linearGradient
@@ -246,7 +246,7 @@ export const HeroBackground = () => (
         y2="764.5"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="#99CCFF" stop-opacity="0" />
+        <stop stopColor="#99CCFF" stopOpacity="0" />
         <stop offset="1" stopColor="#99CCFF" />
       </linearGradient>
       <linearGradient
@@ -257,7 +257,7 @@ export const HeroBackground = () => (
         y2="102.635"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="#99CCFF" stop-opacity="0" />
+        <stop stopColor="#99CCFF" stopOpacity="0" />
         <stop offset="1" stopColor="#99CCFF" />
       </linearGradient>
       <linearGradient
@@ -268,7 +268,7 @@ export const HeroBackground = () => (
         y2="352.831"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="#99CCFF" stop-opacity="0" />
+        <stop stopColor="#99CCFF" stopOpacity="0" />
         <stop offset="1" stopColor="#99CCFF" />
       </linearGradient>
       <linearGradient
@@ -279,7 +279,7 @@ export const HeroBackground = () => (
         y2="698.831"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="#99CCFF" stop-opacity="0" />
+        <stop stopColor="#99CCFF" stopOpacity="0" />
         <stop offset="1" stopColor="#99CCFF" />
       </linearGradient>
       <linearGradient
@@ -290,7 +290,7 @@ export const HeroBackground = () => (
         y2="74.8308"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="#99CCFF" stop-opacity="0" />
+        <stop stopColor="#99CCFF" stopOpacity="0" />
         <stop offset="1" stopColor="#99CCFF" />
       </linearGradient>
       <linearGradient
@@ -301,7 +301,7 @@ export const HeroBackground = () => (
         y2="559.831"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="#99CCFF" stop-opacity="0" />
+        <stop stopColor="#99CCFF" stopOpacity="0" />
         <stop offset="1" stopColor="#99CCFF" />
       </linearGradient>
       <linearGradient
@@ -312,7 +312,7 @@ export const HeroBackground = () => (
         y2="490.831"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="#99CCFF" stop-opacity="0" />
+        <stop stopColor="#99CCFF" stopOpacity="0" />
         <stop offset="1" stopColor="#99CCFF" />
       </linearGradient>
       <linearGradient
@@ -323,7 +323,7 @@ export const HeroBackground = () => (
         y2="965.395"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stopColor="#1E6EE2" stop-opacity="0" />
+        <stop stopColor="#1E6EE2" stopOpacity="0" />
         <stop offset="1" stopColor="#1E6EE2" />
       </linearGradient>
       <linearGradient
