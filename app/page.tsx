@@ -121,6 +121,7 @@ const RowHead = tw.rotary({
 const tableColumnContainer = tw.style({
   width: "w-max",
   borderRadius: "rounded-2xl",
+  padding: "p-[1px]",
   gradient: "bg-gradient-to-b",
   gradientStart: "from-blue-950",
   gradientEnd: "to-gray-100",

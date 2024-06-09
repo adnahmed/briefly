@@ -187,7 +187,7 @@ const bentoContainer = tw.variants({
     maxWidth: "max-w-min",
     gradientEnd: "to-gray-100",
     gradient: "bg-gradient-to-b",
-    padding: "p-[3px]",
+    padding: "p-[1px]",
     borderRadius: "rounded-2xl",
   },
   variants: {
