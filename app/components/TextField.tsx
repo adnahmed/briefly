@@ -18,6 +18,9 @@ const input = tw.variants({
           borderStyle: "focus:border-solid",
           backgroundColor: "focus:bg-white",
         },
+        "::placeholder": {
+          color: "placeholder:text-[#B2B8BE]",
+        },
       },
       error: {
         color: "text-blue-dark-700",
@@ -41,11 +44,8 @@ const input = tw.variants({
 
 const inputContainer = tw.style({
   display: "flex",
-  maxHeight: "max-h-[48px]",
   flexDirection: "flex-col",
   gap: "gap-1",
-
-  margin: "m-5",
 });
 
 const message = tw.style({

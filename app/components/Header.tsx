@@ -42,7 +42,9 @@ export const Header = () => {
             <HeroButton>Plans</HeroButton>
           </a>
           <HeroButton>For providers</HeroButton>
-          <HeroButton>About us</HeroButton>
+          <a href="about_us">
+            <HeroButton>About us</HeroButton>
+          </a>
         </div>
       </div>
       <div className={headerRight.class}>

@@ -1,4 +1,4 @@
-import { GetVariants } from "tailwindest";
+import { GetVariants, Tailwindest } from "tailwindest";
 import { tw } from "../lib/tailwindest";
 import { ChevronRight } from "./ChevronRight";
 import { ProfileIcon } from "./Profile";
@@ -82,6 +82,16 @@ const button = tw.rotary({
       backgroundColor: "disabled:bg-gray-300",
     },
   },
+  about_us: {
+    backgroundColor: "bg-yellow",
+    borderColor: "border-yellow",
+    color: "text-blue-dark",
+    stroke: "stroke-blue-dark",
+    ":active": {
+      color: "active:text-blue-dark",
+      stroke: "active:stroke-blue-dark",
+    },
+  },
   outline: {
     borderColor: "border-blue-950",
     ":active": {
@@ -92,6 +102,18 @@ const button = tw.rotary({
     },
     ":disabled": {
       borderColor: "disabled:border-gray",
+    },
+  },
+  white_outline: {
+    borderColor: "border-white",
+    color: "text-white",
+    ":active": {
+      borderColor: "active:border-white",
+      color: "active:text-white",
+    },
+    ":hover": {
+      borderColor: "hover:border-white",
+      color: "hover:text-white",
     },
   },
   text: {
@@ -108,6 +130,7 @@ interface ButtonProps {
   type?: GetVariants<typeof button>;
   icon?: boolean;
   leftIcon?: boolean;
+  width?: Tailwindest["width"];
 }
 
 type TextButtonProps = Omit<ButtonProps, "icon" | "type"> & {
@@ -134,30 +157,36 @@ function Button(props: TextButtonLeftIcon | TextButtonRightIcon) {
     leftIcon = false,
     children,
     type = "text",
+    width,
   } = props;
   return (
     <button
       disabled={disabled}
-      className={button
-        .compose(
-          children
-            ? {
-                paddingX: icon || leftIcon ? undefined : "px-[1.5rem]",
-                paddingLeft: icon || leftIcon ? "pl-[1rem]" : undefined,
-                paddingRight: icon
-                  ? "pr-[.5rem]"
-                  : leftIcon
-                    ? "pr-[1rem]"
-                    : undefined,
-                paddingY: "py-[1rem]",
-              }
-            : {
-                borderRadius: "rounded-[1.75rem]",
-                height: "h-[3rem]",
-                width: "w-[3rem]",
-              },
-        )
-        .class(type)}
+      className={tw.mergeProps(
+        button
+          .compose(
+            children
+              ? {
+                  paddingX: icon || leftIcon ? undefined : "px-[1.5rem]",
+                  paddingLeft: icon || leftIcon ? "pl-[1rem]" : undefined,
+                  paddingRight: icon
+                    ? "pr-[.5rem]"
+                    : leftIcon
+                      ? "pr-[1rem]"
+                      : undefined,
+                  paddingY: "py-[1rem]",
+                }
+              : {
+                  borderRadius: "rounded-[1.75rem]",
+                  height: "h-[3rem]",
+                  width: "w-[3rem]",
+                },
+          )
+          .style(type),
+        {
+          width,
+        },
+      )}
     >
       {leftIcon && <ProfileIcon />}
       {children && <span className={buttonText.class}>{children}</span>}
