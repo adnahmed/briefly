@@ -4,7 +4,25 @@ import Button from "../components/Button";
 import { GlowingStar } from "../components/GlowingStar";
 import { HeroInputEmail } from "../components/Hero";
 import { Pricing } from "../components/Pricing";
-
+import { tw } from "../lib/tailwindest";
+const squareSplash = tw.variants({
+  base: {
+    position: "absolute",
+    filterBlur: "blur-[70.2px]",
+    zIndex: "-z-50",
+  },
+  variants: {
+    type: {
+      tag: {
+        top: "top-[14rem]",
+        right: "right-[35rem]",
+        backgroundColor: "bg-blue-950",
+        width: "w-[12.345rem]",
+        height: "h-[12.345rem]",
+      },
+    },
+  },
+});
 export default function Page() {
   return (
     <main>
@@ -24,6 +42,7 @@ export default function Page() {
             Get Started
           </Button>
         </div>
+        <div className={squareSplash.class({ type: "tag" })}></div>
         <Image src="/tag.webp" width={350} height={350} alt="tag icon" />
       </div>
       <div className=" w-full flex justify-center items-center mt-[6.19rem]  gap-[2rem]">
