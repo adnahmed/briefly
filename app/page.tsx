@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { BannerVideo } from "./components/BannerVideo";
+import { BentoSquare } from "./components/Bento";
 import { GlowingStar } from "./components/GlowingStar";
 import { HeroGetStarted, HeroInputEmail } from "./components/Hero";
 import { HeroBackground } from "./components/heroBackground";
@@ -31,6 +32,16 @@ const heroVideo = tw.style({
   borderRadius: "rounded-[2rem]",
   borderWidth: "border-[1px]",
   borderColor: "border-white",
+});
+const bento = tw.style({
+  display: "flex",
+  flexDirection: "flex-col",
+  gap: "gap-[2rem]",
+});
+const bentoRow = tw.style({
+  display: "flex",
+  gap: "gap-[2rem]",
+  justifyContent: "justify-center",
 });
 export default function Home() {
   return (
@@ -88,7 +99,16 @@ export default function Home() {
             all in one place
           </h3>
         </div>
-        <div></div>
+        <div className={bento.class}>
+          <div className={bentoRow.class}>
+            <BentoSquare type="brief" />
+            <BentoSquare type="marketplace" />
+          </div>
+          <div className={bentoRow.class}>
+            <BentoSquare type="management" />
+            <BentoSquare type="analytic" />
+          </div>
+        </div>
       </div>
     </main>
   );
