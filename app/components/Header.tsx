@@ -35,7 +35,9 @@ export const Header = () => {
       <div className={headerLeft.class}>
         <Image src={"/logo.svg"} width={176} height={56} alt="logo" />
         <div className={heroButtons.class}>
-          <HeroButton>Platform</HeroButton>
+          <a href="platforms">
+            <HeroButton>Platform</HeroButton>
+          </a>
           <a href="plans">
             <HeroButton>Plans</HeroButton>
           </a>

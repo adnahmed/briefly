@@ -36,6 +36,12 @@ const button = tw.rotary({
     color: "text-orange",
     stroke: "stroke-orange",
   },
+  platform: {
+    backgroundColor: "bg-orange",
+    borderColor: "border-orange",
+    color: "text-white",
+    stroke: "stroke-white",
+  },
   primary: {
     backgroundColor: "bg-blue-950",
     borderColor: "border-blue-950",

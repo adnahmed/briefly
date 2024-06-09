@@ -5,11 +5,12 @@ import { tw } from "../lib/tailwindest";
 const select = tw.style({
   color: "text-blue-dark",
   outlineStyle: "outline-none",
+  padding: "p-[1rem]",
   fontSize: "text-sm",
   display: "flex",
   justifyContent: "justify-between",
   alignItems: "items-center",
-  borderRadius: "rounded-3xl",
+  borderTopRadius: "rounded-t-3xl",
   position: "relative",
   backgroundColor: "bg-white",
 });
@@ -39,7 +40,8 @@ const dropdown = tw.toggle({
   truthy: {
     opacity: "opacity-100",
     height: "h-auto",
-    paddingY: "py-2",
+    padding: "p-[1rem]",
+    width: "w-full",
   },
   falsy: {
     opacity: "opacity-0",
@@ -51,7 +53,7 @@ const dropdown = tw.toggle({
     transitionDuration: "duration-300",
     backgroundColor: "bg-white",
     width: "w-[37rem]",
-    borderRadius: "rounded-2xl",
+    // borderRadius: "rounded-2xl",
     display: "flex",
     flexDirection: "flex-col",
     gap: "gap-[1.75rem]",
@@ -65,8 +67,8 @@ const selectContainer = tw.toggle({
   base: {
     display: "flex",
     flexDirection: "flex-col",
-    padding: "p-[1rem]",
     width: "w-[40rem]",
+    borderRadius: "rounded-2xl",
     position: "relative",
     overflow: "overflow-hidden",
   },
@@ -84,7 +86,7 @@ export function Feature({
 }: {
   title: string;
   icon: string;
-  feature_image: string;
+  feature_image?: string;
   description: string;
 }) {
   const [showFeature, setShowFeature] = useState<boolean>(false);
@@ -128,7 +130,7 @@ export function Feature({
         </span>
         <Image
           className="drop-shadow-xl rounded-[1.4rem] "
-          src={feature_image}
+          src={feature_image ? feature_image : "/default_feature_image.png"}
           alt="feature image"
           width={400}
           height={400}
