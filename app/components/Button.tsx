@@ -1,3 +1,4 @@
+import { GetVariants } from "tailwindest";
 import { tw } from "../lib/tailwindest";
 import { ChevronRight } from "./ChevronRight";
 import { ProfileIcon } from "./Profile";
@@ -28,6 +29,12 @@ const button = tw.rotary({
       stroke: "disabled:stroke-gray",
       fontWeight: "disabled:font-normal",
     },
+  },
+  join: {
+    backgroundColor: "bg-orange-200",
+    borderColor: "border-orange-200",
+    color: "text-orange",
+    stroke: "stroke-orange",
   },
   primary: {
     backgroundColor: "bg-blue-950",
@@ -84,7 +91,7 @@ const buttonText = tw.style({
 interface ButtonProps {
   children?: React.ReactNode;
   disabled?: boolean;
-  type?: "primary" | "secondary" | "outline";
+  type?: GetVariants<typeof button>;
   icon?: boolean;
   leftIcon?: boolean;
 }

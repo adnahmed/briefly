@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import localFont from "next/font/local";
-import { FooterWithTarget } from "./components/FooterWithTarget";
-import { Header } from "./components/Header";
-import "./globals.css";
+import { Footer } from "../components/Footer";
+import { Header } from "../components/Header";
+import "../globals.css";
 
 const dm_sans = DM_Sans({
   subsets: ["latin"],
@@ -11,7 +11,7 @@ const dm_sans = DM_Sans({
 });
 
 const host_grotesk = localFont<`--${string}`>({
-  src: "../public/fonts/HostGrotesk[wght].woff2",
+  src: "../../public/fonts/HostGrotesk[wght].woff2",
   variable: "--font-host-grotesk",
 });
 
@@ -30,11 +30,7 @@ export default function RootLayout({
       <body className={`${dm_sans.className} ${host_grotesk.className}`}>
         <Header />
         {children}
-        <FooterWithTarget
-          title="Let’s build your dream team!"
-          description="We’ll connect you with the expertise you need to ensure it’s a perfect match made for business."
-          action="Get Started"
-        />
+        <Footer />
       </body>
     </html>
   );

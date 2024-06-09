@@ -1,14 +1,14 @@
 import Image from "next/image";
-import { BannerVideo } from "./components/BannerVideo";
-import { BentoSquare } from "./components/Bento";
-import { Cross } from "./components/Cross";
-import { GlowingStar } from "./components/GlowingStar";
-import { GroupIcon } from "./components/GroupIcon";
-import { HeroGetStarted, HeroInputEmail } from "./components/Hero";
-import { HeroBackground } from "./components/heroBackground";
-import { Logos } from "./components/Logos";
-import { Tick } from "./components/Tick";
-import { tw } from "./lib/tailwindest";
+import { BannerVideo } from "../components/BannerVideo";
+import { BentoSquare } from "../components/Bento";
+import { Cross } from "../components/Cross";
+import { GlowingStar } from "../components/GlowingStar";
+import { GroupIcon } from "../components/GroupIcon";
+import { HeroGetStarted, HeroInputEmail } from "../components/Hero";
+import { HeroBackground } from "../components/heroBackground";
+import { Logos } from "../components/Logos";
+import { Tick } from "../components/Tick";
+import { tw } from "../lib/tailwindest";
 
 const hero = tw.style({
   width: "w-full",
@@ -183,11 +183,11 @@ export default function Home() {
         </div>
       </div>
       <div className="flex flex-col gap-[.34rem]">
-        <div className="flex text-orange -tracking-[.04rem] items-center text-[1rem]  justify-center">
+        <div className="flex stroke-orange text-orange -tracking-[.04rem] items-center text-[1rem]  justify-center">
           <GlowingStar />
           Built for you
         </div>
-        <div className="flex flex-col justify-center items-center text-[2.5rem] leading-[2.5625rem] -tracking-[.1rem]">
+        <div className="flex font-serif flex-col justify-center items-center text-[2.5rem] leading-[2.5625rem] -tracking-[.1rem]">
           <h3>Your business essentials,</h3>
           <h3 className="colorful-wave bg-clip-text text-transparent">
             all in one place

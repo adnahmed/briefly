@@ -3,6 +3,8 @@ import Image from "next/image";
 import { tw } from "../lib/tailwindest";
 import { useBreakpoint } from "../lib/useBreakpoint";
 import { AIBrainChip } from "./AIBrainChip";
+import { BankIcon } from "./BankIcon";
+import { ReceiptIcon } from "./ReceiptIcon";
 import { ShoppingBag } from "./ShoppingBag";
 import { Shredder } from "./shred";
 import { UpGraphCircle } from "./UpGraphCircle";
@@ -61,6 +63,14 @@ const square = tw.variants({
           width: "tablet:w-[47.38rem]",
         },
       },
+      piggy: {
+        width: "w-[38rem]",
+        padding: "p-[2rem]",
+      },
+      cart: {
+        width: "w-[38rem]",
+        padding: "p-[2rem]",
+      },
     },
   },
 });
@@ -115,6 +125,20 @@ const squareSplash = tw.variants({
           width: "tablet:w-[12.716rem]",
           height: "tablet:h-[12.716rem]",
         },
+      },
+      piggy: {
+        bottom: "bottom-[9rem]",
+        right: "right-[7.19rem]",
+        backgroundColor: "bg-blue-950",
+        width: "w-[12.345rem]",
+        height: "h-[12.345rem]",
+      },
+      cart: {
+        bottom: "bottom-[9rem]",
+        right: "right-[7.19rem]",
+        backgroundColor: "bg-blue-950",
+        width: "w-[12.345rem]",
+        height: "h-[12.345rem]",
       },
     },
   },
@@ -178,6 +202,24 @@ const bento_title = tw.variants({
           top: "tablet:top-[-3rem]",
         },
       },
+      piggy: {
+        color: "text-gray-950",
+        stroke: "stroke-gray-950",
+        backgroundColor: "bg-blue-950",
+        top: "top-[-1rem]",
+        "@tablet": {
+          top: "tablet:top-[-3.5rem]",
+        },
+      },
+      cart: {
+        color: "text-gray-950",
+        stroke: "stroke-gray-950",
+        backgroundColor: "bg-blue-950",
+        top: "top-[-1rem]",
+        "@tablet": {
+          top: "tablet:top-[-3.5rem]",
+        },
+      },
     },
   },
 });
@@ -203,6 +245,12 @@ const bentoContainer = tw.variants({
       },
       marketplace: {
         gradientStart: "from-pink",
+      },
+      piggy: {
+        gradientStart: "from-blue-950",
+      },
+      cart: {
+        gradientStart: "from-blue-950",
       },
     },
   },
@@ -247,6 +295,22 @@ const bento_desc = tw.variants({
           top: "tablet:top-[-2.5rem]",
         },
       },
+      piggy: {
+        "@tablet": {
+          top: "tablet:top-[-3rem]",
+          color: "tablet:text-[#5A6772]",
+          lineHeight: "tablet:leading-[1.66rem]",
+          fontSize: "tablet:text-[1.125rem]",
+        },
+      },
+      cart: {
+        "@tablet": {
+          top: "tablet:top-[-3rem]",
+          color: "tablet:text-[#5A6772]",
+          lineHeight: "tablet:leading-[1.66rem]",
+          fontSize: "tablet:text-[1.125rem]",
+        },
+      },
     },
   },
 });
@@ -254,7 +318,7 @@ const bento_desc = tw.variants({
 export const BentoSquare = ({
   type = "brief",
 }: {
-  type: "brief" | "analytic" | "management" | "marketplace";
+  type: "brief" | "analytic" | "management" | "marketplace" | "piggy" | "cart";
 }) => {
   const tablet = useBreakpoint("tablet");
   let image_src = "";
@@ -299,6 +363,24 @@ export const BentoSquare = ({
       icon = <ShoppingBag />;
       description =
         "Explore a curated marketplace of experts in marketing, development, creative, and business services.";
+      break;
+    case "piggy":
+      image_src = "/piggy.webp";
+      width = 285.594;
+      height = 285.594;
+      title = "What are credits?";
+      icon = <BankIcon />;
+      description =
+        "Brieflly credits give you full control to tackle all your business needs, from quick consultations to full-scale projects and everything in between. Use them however you like to fit your unique requirements.";
+      break;
+    case "cart":
+      image_src = "/cart.webp";
+      width = 285.59;
+      height = 285.59;
+      title = "How credits work?";
+      icon = <ReceiptIcon />;
+      description =
+        "Brieflly credits are the key to accessing any service you need. The number of credits required depends on the scope and complexity of the task, so you only pay for what you use.";
       break;
   }
   return (

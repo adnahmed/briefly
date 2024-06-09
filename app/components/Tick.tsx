@@ -1,11 +1,12 @@
 export const Tick = ({ text }: { text: string }) => {
   return (
-    <div className="flex items-center max-w-max justify-center shrink">
+    <div className="flex items-center max-w-max justify-center shrink gap-1">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="32"
         height="32"
         viewBox="0 0 32 32"
+        className="self-start"
         fill="none"
       >
         <path

@@ -1,34 +1,43 @@
 "use client";
 import { useState } from "react";
-import { capitalize } from "../lib/helpers";
 import { tw } from "../lib/tailwindest";
-const select = tw.style({
-  ":active": {
-    borderColor: "active:border-sky",
-    borderWidth: "active:border-[1.5px]",
-    borderStyle: "active:border-solid",
-    backgroundColor: "active:bg-white",
-    color: "active:text-blue-dark-600",
+const select = tw.toggle({
+  base: {
+    outlineStyle: "outline-none",
+    fontSize: "text-sm",
+    paddingY: "py-[13px]",
+    paddingX: "px-[24px]",
+    display: "flex",
+    justifyContent: "justify-between",
+    alignItems: "items-center",
+    borderRadius: "rounded-3xl",
+    position: "relative",
   },
-  ":focus": {
-    borderColor: "focus:border-sky",
-    borderWidth: "focus:border-[1.5px]",
-    borderStyle: "focus:border-solid",
-    backgroundColor: "focus:bg-white",
-    color: "focus:text-blue-dark-600",
+  truthy: {
+    borderColor: "border-blue-dark-300",
+    backgroundColor: "bg-white",
+    borderWidth: "border-[1px]",
+    color: "text-[#5A6772]",
+    cursor: "cursor-default",
   },
-  color: "text-blue-dark-300",
-  outlineStyle: "outline-none",
-  fontSize: "text-sm",
-  paddingY: "py-[13px]",
-  paddingX: "px-[24px]",
-  display: "flex",
-  justifyContent: "justify-between",
-  maxWidth: "max-w-[255px]",
-  alignItems: "items-center",
-  borderRadius: "rounded-3xl",
-  position: "relative",
-  backgroundColor: "bg-gray-300",
+  falsy: {
+    color: "text-blue-dark-300",
+    backgroundColor: "bg-gray-300",
+    ":active": {
+      borderColor: "active:border-sky",
+      borderWidth: "active:border-[1.5px]",
+      borderStyle: "active:border-solid",
+      backgroundColor: "active:bg-white",
+      color: "active:text-blue-dark-600",
+    },
+    ":focus": {
+      borderColor: "focus:border-sky",
+      borderWidth: "focus:border-[1.5px]",
+      borderStyle: "focus:border-solid",
+      backgroundColor: "focus:bg-white",
+      color: "focus:text-blue-dark-600",
+    },
+  },
 });
 
 const selectedItem = tw.style({
@@ -63,7 +72,7 @@ const dropdown = tw.toggle({
   },
   base: {
     transition: "transition ease-in-out",
-    maxWidth: "max-w-[16.5rem]",
+    width: "w-full",
     backgroundColor: "bg-white",
     boxShadow: "shadow-lg",
     filterDropShadow: "drop-shadow-sm",
@@ -78,7 +87,7 @@ const dropdownList = tw.style({
 
 const dropdownListItem = tw.style({
   borderRadius: "rounded-lg",
-  width: "w-[16rem]",
+  width: "w-full",
   display: "flex",
   justifyContent: "justify-between",
   alignItems: "items-center",
@@ -87,6 +96,8 @@ const dropdownListItem = tw.style({
 
 const selectContainer = tw.style({
   display: "flex",
+  position: "relative",
+  zIndex: "z-50",
   flexDirection: "flex-col",
 });
 
@@ -94,9 +105,11 @@ export function Dropdown({
   onChange,
   options,
   defaultOption,
+  disabled = false,
 }: {
   onChange?: (option: string) => void;
   defaultOption?: string;
+  disabled: boolean;
   options: string[];
 }) {
   const [selected, setSelected] = useState<string>(defaultOption ?? options[0]);
@@ -109,17 +122,15 @@ export function Dropdown({
   return (
     <div className={selectContainer.class}>
       <button
-        onClick={() => setShowDropdown(!showDropdown)}
-        className={select.class}
+        onClick={() => {
+          if (disabled) return;
+          setShowDropdown(!showDropdown);
+        }}
+        className={select.class(disabled)}
       >
-        <span className={selectedItem.class}>
-          {selected
-            .split("_")
-            .map((w) => capitalize(w))
-            .join(" ")}
-        </span>
+        <span className={selectedItem.class}>{selected}</span>
         <svg
-          className={arrow.class(showDropdown)}
+          className={`${arrow.class(showDropdown)} ${disabled ? "stroke-[#5A6772]" : ""}`}
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -148,10 +159,7 @@ export function Dropdown({
               <a
                 className={`block py-2 hover:bg-gray-300 ${o === selected ? "!bg-sky-400 text-blue-dark" : ""}  rounded-lg w-full px-[.5em]`}
               >
-                {o
-                  .split("_")
-                  .map((w) => capitalize(w))
-                  .join(" ")}
+                {o}
               </a>
             </li>
           ))}
