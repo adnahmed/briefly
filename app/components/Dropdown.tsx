@@ -104,6 +104,7 @@ const selectContainer = tw.style({
 export function Dropdown({
   onChange,
   options,
+  unit,
   defaultOption,
   disabled = false,
 }: {
@@ -111,6 +112,7 @@ export function Dropdown({
   defaultOption?: string;
   disabled: boolean;
   options: string[];
+  unit?: string;
 }) {
   const [selected, setSelected] = useState<string>(defaultOption ?? options[0]);
   const [showDropdown, setShowDropdown] = useState<boolean>(false);
@@ -128,7 +130,9 @@ export function Dropdown({
         }}
         className={select.class(disabled)}
       >
-        <span className={selectedItem.class}>{selected}</span>
+        <span className={selectedItem.class}>
+          {`${selected}${unit ? " " + unit : ""}`}
+        </span>
         <svg
           className={`${arrow.class(showDropdown)} ${disabled ? "stroke-[#5A6772]" : ""}`}
           aria-hidden="true"
@@ -159,7 +163,7 @@ export function Dropdown({
               <a
                 className={`block py-2 hover:bg-gray-300 ${o === selected ? "!bg-sky-400 text-blue-dark" : ""}  rounded-lg w-full px-[.5em]`}
               >
-                {o}
+                {`${o}${unit ? " " + unit : ""}`}
               </a>
             </li>
           ))}

@@ -182,6 +182,7 @@ export const Pricing = ({
             ) : undefined}
           </div>
           <Dropdown
+            unit="credits/month"
             disabled={credits.length === 1}
             defaultOption={credits[credits.length - 1]}
             options={credits}
