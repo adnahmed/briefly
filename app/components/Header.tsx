@@ -41,7 +41,9 @@ export const Header = () => {
           <a href="plans">
             <HeroButton>Plans</HeroButton>
           </a>
-          <HeroButton>For providers</HeroButton>
+          <a href="provider">
+            <HeroButton>For providers</HeroButton>
+          </a>
           <a href="about_us">
             <HeroButton>About us</HeroButton>
           </a>

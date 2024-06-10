@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+    <path
+        d="M18.8145 7.39428C19.8226 7.39428 20.6398 6.57606 20.6398 5.56674C20.6398 4.55742 19.8226 3.7392 18.8145 3.7392C17.8065 3.7392 16.9893 4.55742 16.9893 5.56674C16.9893 6.57606 17.8065 7.39428 18.8145 7.39428Z"
+        stroke="#1E6EE2" stroke-width="1.44" />
+    <path d="M18.8147 9.98621V9.99621" stroke="#1E6EE2" stroke-width="1.44" stroke-linecap="round" />
+    <path d="M18.8147 13.1639V13.1739" stroke="#1E6EE2" stroke-width="1.44" stroke-linecap="round" />
+    <path d="M18.8147 16.3416V16.3516" stroke="#1E6EE2" stroke-width="1.44" stroke-linecap="round" />
+    <path d="M18.8147 19.5187V19.5287" stroke="#1E6EE2" stroke-width="1.44" stroke-linecap="round" />
+    <path
+        d="M5.18539 10.572C6.19347 10.572 7.01068 9.75374 7.01068 8.74441C7.01068 7.73509 6.19347 6.91687 5.18539 6.91687C4.17732 6.91687 3.36011 7.73509 3.36011 8.74441C3.36011 9.75374 4.17732 10.572 5.18539 10.572Z"
+        stroke="#1E6EE2" stroke-width="1.44" />
+    <path d="M5.1853 13.1635V13.1735" stroke="#1E6EE2" stroke-width="1.44" stroke-linecap="round" />
+    <path d="M5.1853 16.3416V16.3516" stroke="#1E6EE2" stroke-width="1.44" stroke-linecap="round" />
+    <path d="M5.1853 19.5187V19.5287" stroke="#1E6EE2" stroke-width="1.44" stroke-linecap="round" />
+    <path
+        d="M12.0001 13.7491C13.0082 13.7491 13.8254 12.9309 13.8254 11.9216C13.8254 10.9123 13.0082 10.0941 12.0001 10.0941C10.992 10.0941 10.1748 10.9123 10.1748 11.9216C10.1748 12.9309 10.992 13.7491 12.0001 13.7491Z"
+        stroke="#1E6EE2" stroke-width="1.44" />
+    <path d="M12 16.3416V16.3516" stroke="#1E6EE2" stroke-width="1.44" stroke-linecap="round" />
+    <path d="M12 19.5187V19.5287" stroke="#1E6EE2" stroke-width="1.44" stroke-linecap="round" />
+</svg>
