@@ -64,29 +64,37 @@ export const HeroInputEmail = () => {
   );
 };
 
-const heroButton = tw.style({
-  color: "text-[#5A6772]",
-  padding: "p-[1rem]",
-  height: "h-[3rem]",
-  width: "w-max",
-  fontWeight: "font-medium",
-  ":hover": {
-    color: "hover:text-blue-950",
+const heroButton = tw.toggle({
+  base: {
+    color: "text-[#5A6772]",
+    padding: "p-[1rem]",
+    height: "h-[3rem]",
+    width: "w-max",
+    fontWeight: "font-medium",
+    ":hover": {
+      color: "hover:text-blue-950",
+    },
+    ":active": {
+      color: "active:text-blue-950",
+    },
   },
-  ":active": {
-    color: "active:text-blue-950",
+  truthy: {
+    color: "text-blue-950",
   },
+  falsy: {},
 });
 
 export const HeroButton = ({
   children,
+  isActive = false,
   onClick,
 }: {
   children: string;
   onClick?: MouseEventHandler<HTMLButtonElement>;
+  isActive?: boolean;
 }) => {
   return (
-    <button onClick={onClick} className={heroButton.class}>
+    <button onClick={onClick} className={heroButton.class(isActive)}>
       {children}
     </button>
   );

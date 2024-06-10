@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { tw } from "../lib/tailwindest";
 import Button from "./Button";
 import { HeroButton } from "./Hero";
@@ -30,22 +32,31 @@ const heroButtons = tw.style({
 });
 
 export const Header = () => {
+  const pathname = usePathname();
   return (
     <div className={header.class}>
       <div className={headerLeft.class}>
-        <Image src={"/logo.svg"} width={176} height={56} alt="logo" />
+        <a href="/">
+          <Image src={"/logo.svg"} width={176} height={56} alt="logo" />
+        </a>
         <div className={heroButtons.class}>
           <a href="platforms">
-            <HeroButton>Platform</HeroButton>
+            <HeroButton isActive={pathname === "/platforms"}>
+              Platform
+            </HeroButton>
           </a>
           <a href="plans">
-            <HeroButton>Plans</HeroButton>
+            <HeroButton isActive={pathname === "/plans"}>Plans</HeroButton>
           </a>
           <a href="provider">
-            <HeroButton>For providers</HeroButton>
+            <HeroButton isActive={pathname === "/provider"}>
+              For providers
+            </HeroButton>
           </a>
           <a href="about_us">
-            <HeroButton>About us</HeroButton>
+            <HeroButton isActive={pathname === "/about_us"}>
+              About us
+            </HeroButton>
           </a>
         </div>
       </div>
