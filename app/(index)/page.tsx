@@ -30,12 +30,20 @@ const heroVideo = tw.style({
   marginTop: "mt-[4.5rem]",
   overflow: "overflow-hidden",
   zIndex: "z-[10]",
-  width: "w-max",
-  marginX: "mx-auto",
   position: "relative",
   borderRadius: "rounded-[2rem]",
   borderWidth: "border-[1px]",
   borderColor: "border-white",
+  boxShadow: "shadow-2xl",
+  "@desktop": {
+    maxWidth: "desktop:max-w-max",
+    width: "desktop:w-max",
+    marginX: "desktop:mx-auto",
+  },
+  "@tablet": {
+    marginX: "tablet:mx-[3rem]",
+  },
+  marginX: "mx-[1rem]",
 });
 const bento = tw.style({
   display: "flex",
