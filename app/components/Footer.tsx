@@ -75,17 +75,28 @@ export const Footer = ({ target = false }: { target?: boolean }) => {
   return (
     <div className={footer.class(target)}>
       <div className={footerStart.class}>
-        <div className={business_logo.class}>
-          <Image src={"/named_logo.svg"} width={176} height={56} alt="logo" />
-          <div className="-tracking-[.03rem] leading-[1.48rem] min-w-max text-white">
-            Your platform to grow your business.
+        <a href="/">
+          <div className={business_logo.class}>
+            <Image src={"/named_logo.svg"} width={176} height={56} alt="logo" />
+            <div className="-tracking-[.03rem] leading-[1.48rem] min-w-max text-white">
+              Your platform to grow your business.
+            </div>
           </div>
-        </div>
+        </a>
         <div className={heroButtons.class}>
-          <div className={heroButton.class}>Platform</div>
-          <div className={heroButton.class}>Plans</div>
-          <div className={heroButton.class}>For providers</div>
-          <div className={heroButton.class}>About us</div>
+          <a href="platforms">
+            <div className={heroButton.class}>Platform</div>
+          </a>
+
+          <a href="plans">
+            <div className={heroButton.class}>Plans</div>
+          </a>
+          <a href="provider">
+            <div className={heroButton.class}>For providers</div>
+          </a>
+          <a href="about_us">
+            <div className={heroButton.class}>About us</div>
+          </a>
         </div>
       </div>
       <div className={footerEnd.class}>
