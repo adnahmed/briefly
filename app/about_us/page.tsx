@@ -3,9 +3,17 @@ import Button from "../components/Button";
 import { Logos } from "../components/Logos";
 import { TextArea, TextField } from "../components/TextField";
 
-const Value = ({ icon, title, description }) => {
+const Value = ({
+  icon,
+  title,
+  description,
+}: {
+  icon: string;
+  title: string;
+  description: string;
+}) => {
   return (
-    <div className="flex flex-col gap-[1rem]">
+    <div className="flex flex-col gap-[1rem] max-w-max">
       <Image
         className="self-center"
         src={icon}
@@ -13,11 +21,11 @@ const Value = ({ icon, title, description }) => {
         height={56}
         alt="value icon"
       />
-      <div className="w-[19rem] flex flex-col gap-[.625rem]">
+      <div className="tablet:w-[19rem] flex flex-col gap-[.625rem]">
         <div className="leading-[1.25rem] -tracking-[.05rem] font-serif text-center font-bold text-blue-dark">
           {title}
         </div>
-        <div className="leading-[1.295rem] -tracking-[.02625rem] text-[.875rem] text-[#5A6772] text-center">
+        <div className="leading-[1.295rem] max-w-[10.5rem] tablet:max-w-max -tracking-[.02625rem] text-[.875rem] text-[#5A6772] text-center">
           {description}
         </div>
       </div>
@@ -27,25 +35,33 @@ const Value = ({ icon, title, description }) => {
 export default function Page() {
   return (
     <main>
-      <div className=" w-full h-[47.5rem]">
+      <div className=" w-full tablet:h-[47.5rem]">
         <div
           className="
          bg-[image:url(/about_us_hero_bg.svg)]
          flex 
+         flex-col
+         tablet:flex-row
          justify-center
          items-center
-         gap-[8.12rem] 
+         tablet:gap-[8.12rem] 
          w-full
-         px-[15.25rem]"
+         text-center
+         bg-cover
+         tablet:text-start
+         tablet:px-[15.25rem]"
         >
           <div
             className="
-            py-[8.94rem]
+            pt-[7.06rem]
+            tablet:py-[8.94rem]
           flex 
           flex-col 
           text-white 
-          text-[3rem] 
-          leading-[3.625rem] 
+          tablet:text-[3rem] 
+          text-[2.5rem]
+          tablet:leading-[3.625rem] 
+          leading-[2.3125rem]
           -tracking-[.12rem] 
           font-serif"
           >
@@ -54,26 +70,53 @@ export default function Page() {
           </div>
           <div
             className="
-          w-[30rem]
+          mt-[1rem]
+          tablet:mt-0
+          tablet:w-[30rem]
           flex
           flex-col
           items-left
+          px-[1rem]
+          tablet:px-0
           gap-[.5rem]"
           >
             <span
               className="
             text-white
-            text-[1.25rem]
-            leading-[1.85rem]
-            -tracking-[.0375rem]"
+            tablet:text-[1.25rem]
+            text-[.875rem]
+            tablet:leading-[1.85rem]
+            leading-[1.295rem]
+            -tracking-[.02625rem]
+            tablet:-tracking-[.0375rem]"
             >
               Leave the struggle behind and find your dream team. We connect you
               with the perfect partners, along with the tools you need to
               achieve business success.
             </span>
-            <div className="flex gap-[.5rem]">
-              <Button type="about_us">Get Started</Button>
-              <Button type="white_outline">Contact Us</Button>
+            <div className="flex gap-[.5rem] mt-[1rem] tablet:mt-0 mb-[7rem] tablet:mb-0">
+              <Button
+                custom={{
+                  width: "w-[10.75rem]",
+                  "@tablet": {
+                    width: "tablet:w-max",
+                  },
+                }}
+                type="about_us"
+              >
+                Get Started
+              </Button>
+              <Button
+                custom={{
+                  width: "w-[10.75rem]",
+                  "@tablet": {
+                    width: "tablet:w-max",
+                  },
+                }}
+                type="white_outline"
+              >
+                Contact Us
+              </Button>
             </div>
           </div>
         </div>
@@ -85,8 +128,10 @@ export default function Page() {
         justify-center 
         items-center 
         gap-[.5rem] 
-        pb-[6.5rem]
-        pt-[4.5rem]"
+        px-[1rem]
+        tablet:px-0
+        pt-[3rem]
+        tablet:pt-[4.5rem]"
         >
           <div
             className="
@@ -100,7 +145,7 @@ export default function Page() {
           >
             The challenge
           </div>
-          <div className="w-[36rem] text-[#5A6772] text-center leading-[1.48rem] -tracking-[.03rem]">
+          <div className="text-[.875rem] leading-[1.295rem] -tracking-[.02625rem] tablet:w-[36rem] text-[#5A6772] text-center tablet:leading-[1.48rem] tablet:-tracking-[.03rem]">
             Finding reliable and skilled service providers can be a challenge
             for businesses. The traditional hiring process is often
             time-consuming, expensive, and uncertain, resulting in project
@@ -108,15 +153,15 @@ export default function Page() {
           </div>
         </div>
       </div>
-      <div className="flex w-full justify-center gap-[2rem] items-center mb-[6.5rem]">
+      <div className="pt-[3.44rem] flex w-full flex-col tablet:flex-row justify-center gap-[2rem] items-center mb-[6.5rem]">
         <Image
-          className="rounded-[1rem]"
+          className="rounded-[1rem] max-w-[22.5rem] max-h-[20rem] desktop:max-w-[480px] desktop:max-h-[328px]"
           src="/family.png"
           width={480}
           height={328}
           alt="solution"
         />
-        <div className="w-[30rem] flex flex-col gap-[.5rem] items-start justify-center ">
+        <div className="max-w-[22.5rem] tablet:max-w-[20.5rem] desktop:max-w-[30rem] flex flex-col gap-[.5rem] items-start justify-center ">
           <div className="text-blue-dark text-[2rem] leading-[2.3125rem] -tracking-[.08rem] text-bold font-serif">
             Our solution
           </div>
@@ -140,7 +185,7 @@ export default function Page() {
             The heart of everything we do.
           </div>
         </div>
-        <div className="flex gap-[2.5rem] justify-between mb-[6.87rem]">
+        <div className="flex flex-wrap gap-[2.5rem] mx-[.5rem] justify-evenly mb-[6.87rem]">
           <Value
             icon={"/integrity.svg"}
             title={"Integrity"}
@@ -171,9 +216,9 @@ export default function Page() {
           />
         </div>
       </div>
-      <div className="absolute w-full h-[35rem] -z-50 bg-[#0377FF]"></div>
-      <div className="flex justify-center items-center py-[2rem] gap-[3.56rem]">
-        <div className="w-[30rem] flex flex-col gap-[.5rem]">
+      <div className="absolute w-full h-[49rem] tablet:h-[35rem] -z-50 bg-[#0377FF]"></div>
+      <div className="flex flex-col-reverse tablet:flex-row justify-center items-center py-[2rem] desktop:gap-[3.56rem]">
+        <div className="max-w-[22.5rem] tablet:max-w-[20.5rem] desktop:max-w-[30rem] flex flex-col gap-[.5rem]">
           <div className="font-serif text-[2rem] font-bold leading-[2.3125rem] -tracking-[.08rem] text-gray-950">
             Our mission
           </div>
@@ -185,6 +230,7 @@ export default function Page() {
           </div>
         </div>
         <Image
+          className="tablet:max-w-[371px] tablet:max-h-[371px]"
           src={"/rocket.webp"}
           width={371}
           height={371}
@@ -195,13 +241,16 @@ export default function Page() {
       <div
         className="
       flex
+      flex-col
+      tablet:flex-row
       gap-[2rem]
-      w-[46rem] 
-      mx-auto 
+      tablet:w-[46rem] 
+      tablet:mx-auto 
       rounded-[1.5rem] 
       border-[1px] 
       border-blue-dark 
-      h-[33.0625rem] 
+      mx-[1rem]
+      tablet:h-[33.0625rem] 
       bg-white 
       drop-shadow-2xl 
       shadow-2xl 
@@ -220,14 +269,14 @@ px-[1.5rem] py-[1.41rem]"
                   Brieflly.
                 </div>
               </div>
-              <div className="flex gap-[1rem] mt-[1.75rem]">
+              <div className="hidden tablet:flex gap-[1rem] mt-[1.75rem]">
                 <Logos type="instagram" />
                 <Logos type="x" />
                 <Logos type="discord" />
                 <Logos type="linkedin" />
               </div>
             </div>
-            <div>
+            <div className="hidden tablet:block">
               <div className="text-blue-dark -tracking-[.045rem] leading-[2.3125rem] font-medium text-[1.125rem] font-serif">
                 Email us at:
               </div>
@@ -261,18 +310,32 @@ px-[1.5rem] py-[1.41rem]"
           </Button>
         </div>
       </div>
-      <div className="flex flex-col justify-center items-center gap-[.5rem] mb-[7.03rem]">
-        <div className="font-serif -tracking-[.12rem] leading-[3rem] font-bold text-[3rem] text-center w-[38rem]">
+      <div className="flex flex-col justify-center items-center gap-[.5rem] mb-[3.69rem] tablet:mb-[7.03rem]">
+        <div className="font-serif tablet:-tracking-[.12rem] -tracking-[.09rem] leading-[2.375rem] tablet:leading-[3rem] font-bold text-[2.25rem] tablet:text-[3rem] text-center tablet:w-[38rem]">
           Ready to level up your business game?
         </div>
-        <div className="w-[47rem] text-center leading-[1.85rem] -tracking-[.0375rem] text-[#5A6772] text-[1.25rem]">
+        <div className="mx-[1rem] tablet:mx-0 tablet:w-[47rem] text-center leading-[1.295rem] tablet:leading-[1.85rem] -tracking-[.02625rem] tablet:-tracking-[.0375rem] text-[#5A6772] text-[.875rem] tablet:text-[1.25rem]">
           Brieflly can help you hit your business goals. Whether you're looking
           for an expert or want to sign up as a service provider, join us today
           and start your journey to success!
         </div>
-        <div className="flex gap-[1rem] justify-center items-center">
-          <Button type="primary">I’m looking for an expert</Button>
-          <Button type="secondary">I’m a service provider</Button>
+        <div className="flex mt-[.5rem] gap-[1rem] justify-center items-center">
+          <Button
+            custom={{
+              fontSize: "text-[.875rem]",
+            }}
+            type="primary"
+          >
+            I’m looking for an expert
+          </Button>
+          <Button
+            custom={{
+              fontSize: "text-[.875rem]",
+            }}
+            type="secondary"
+          >
+            I’m a service provider
+          </Button>
         </div>
       </div>
     </main>
