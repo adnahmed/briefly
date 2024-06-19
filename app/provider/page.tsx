@@ -56,7 +56,7 @@ const Step = ({
           alt={`${title} icon`}
         />
       </div>
-      <div className="w-[18.9375rem]">
+      <div className="w-[22.5rem] tablet:w-[16rem] screen:w-[18.9375rem]">
         <div className="font-serif text-[1.25rem] font-bold leading-[2.3125rem] -tracking-[.05rem] text-blue-dark">
           {title}
         </div>
@@ -103,13 +103,10 @@ const RowValue = tw.rotary({
   },
   end_key: {
     justifyContent: "justify-evenly",
-    // paddingLeft: "pl-[3.29rem]",
     paddingRight: "pr-[2rem]",
     paddingLeft: "pl-[14rem]",
   },
   key: {
-    // justifyContent: "justify-evenly",
-    // paddingRight: "pr-[2.44rem]",
     paddingLeft: "pl-[2.91rem]",
     fontFamily: "font-serif",
     letterSpacing: "tracking-[-0.045rem]",
@@ -131,7 +128,6 @@ const RowHead = tw.rotary({
     textAlign: "text-left",
     paddingLeft: "pl-[2.91rem]",
     borderLeftRadius: "rounded-l-[1.5rem]",
-    // paddingRight: "pr-[7.91rem]",
   },
   end_key: {
     textAlign: "text-left",
@@ -280,7 +276,7 @@ export default function Page() {
           Get started in these 4 easy steps.
         </div>
       </div>
-      <div className="flex gap-[2rem] justify-center items-center mb-[6.53rem]">
+      <div className="flex flex-wrap gap-[2rem] justify-center items-center mb-[6.53rem]">
         <Step
           number={1}
           icon={"/step1.svg"}
@@ -306,7 +302,7 @@ export default function Page() {
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ante veli"
         />
       </div>
-      <div className="absolute w-full h-[65rem] -z-50 bg-[#0377FF]"></div>
+      <div className="absolute w-full desktop:h-[70rem] h-[65rem] screen:h-[65rem] -z-50 bg-[#0377FF]"></div>
       <div className="flex flex-col gap-[3.72rem] py-[5.56rem]">
         <div className="flex gap-[2rem] justify-center items-center">
           <div className="px-[7.38rem] py-[2.94rem] rounded-[1.5rem] bg-white">
@@ -333,7 +329,7 @@ export default function Page() {
           <div className="text-white text-center font-serif text-[2rem] leading-[2.3125rem] -tracking-[.08rem]">
             How we collect reviews
           </div>
-          <div className="flex gap-[3.5rem] mb-[17rem]">
+          <div className="flex justify-center desktop:max-w-[60rem] screen:max-w-full flex-wrap gap-[3.5rem] mb-[17rem]">
             <ProcessStep
               number={1}
               title="Submit client references"
