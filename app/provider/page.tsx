@@ -12,7 +12,7 @@ const tableColumn = tw.rotary({
     display: "flex",
     flexDirection: "flex-col",
     justifyContent: "justify-evenly",
-    maxWidth: "max-w-max",
+    // maxWidth: "max-w-full",
     color: "text-blue-dark-950",
   },
   value: {
@@ -102,21 +102,22 @@ const RowValue = tw.rotary({
     display: "flex",
   },
   end_key: {
-    justifyContent: "justify-evenly",
-    paddingRight: "pr-[2rem]",
-    paddingLeft: "pl-[14rem]",
+    justifyContent: "justify-end",
+    paddingRight: "pr-[3rem]",
+    // paddingLeft: "pl-[14rem]",
   },
   key: {
     paddingLeft: "pl-[2.91rem]",
     fontFamily: "font-serif",
     letterSpacing: "tracking-[-0.045rem]",
     fontSize: "text-[1.125rem]",
+    justifyContent: "justify-start",
+    alignItems: "items-center",
   },
   value: {
-    display: "flex",
     fontFamily: "font-sans",
     justifyContent: "justify-center",
-    paddingLeft: "pl-[12rem]",
+    // paddingLeft: "pl-[12rem]",
     alignItems: "items-center",
     lineHeight: "leading-[1.48rem]",
     letterSpacing: "tracking-[-0.03rem]",
@@ -132,14 +133,18 @@ const RowHead = tw.rotary({
   end_key: {
     textAlign: "text-left",
     paddingRight: "pr-[2rem]",
-    paddingLeft: "pl-[13rem]",
+    justifyContent: "justify-end",
+    // paddingLeft: "pl-[13rem]",
     borderRightRadius: "rounded-r-[1.5rem]",
   },
   value: {
-    paddingLeft: "pl-[12rem]",
+    justifyContent: "justify-center",
+    // paddingLeft: "pl-[12rem]",
+    paddingX: "px-[4rem]",
     textAlign: "text-center",
   },
   base: {
+    display: "flex",
     fontFamily: "font-serif",
     fontSize: "text-[1.5rem]",
     lineHeight: "leading-[1.5625rem]",
@@ -151,7 +156,7 @@ const RowHead = tw.rotary({
 });
 
 export default function Page() {
-  const table_data = {
+  const table_data: Record<string, string[] | undefined> = {
     Services: [
       "Biz Dev & Sales team",
       "CRM",
@@ -362,8 +367,8 @@ export default function Page() {
           but also save you some serious cash!
         </div>
       </div>
-      <div className="mt-[4rem] flex justify-center items-center flex-col">
-        <div className={table.class}>
+      <div className="mt-[4rem] flex justify-center items-center flex-col mb-[17.25rem]">
+        <div className="grid grid-cols-4 desktop:grid-cols-[1fr,1.4fr,1.2fr,1fr] grid-rows-[1fr,5rem]">
           {Object.keys(table_data).map((key, h_index) => (
             <div
               key={h_index}
@@ -372,7 +377,7 @@ export default function Page() {
               <span className={RowHead.class(h_index === 0 ? "key" : "value")}>
                 {key}
               </span>
-              {table_data[key].map((value, index) => (
+              {table_data[key]?.map((value, index) => (
                 <span
                   key={index}
                   className={RowValue.class(h_index === 0 ? "key" : "value")}
@@ -406,23 +411,23 @@ export default function Page() {
               <Tick />
             </span>
           </div>
-        </div>
-      </div>
-      <div className="mr-[21rem] px-[1.44rem] rounded-[1.5rem] py-[.69rem] w-max ml-auto bg-gray-700 mt-[1.5rem] flex gap-[11.06rem] mb-[17.25rem]">
-        <div>
-          <div className="text-blue-dark text-[.875rem] text-center -tracking-[.035rem]">
-            Total cost:
+          <div className="col-start-3 col-end-4 bg-gray-700  rounded-l-[1.5rem] flex justify-center flex-col items-center">
+            <div className="text-blue-dark text-[.875rem] text-center -tracking-[.035rem]">
+              Total cost:
+            </div>
+            <div className="font-serif leading-[1.5625rem] -tracking-[.045rem] text-[1.125rem] text-blue-dark text-center">
+              $6,970/mo
+            </div>
           </div>
-          <div className="font-serif leading-[1.5625rem] -tracking-[.045rem] text-[1.125rem] text-blue-dark text-center">
-            $6,970/mo
-          </div>
-        </div>
-        <div className="flex flex-col justify-center items-center">
-          <div>
-            <Tick />
-          </div>
-          <div className="font-srif text-[1.125rem] leading-[1.5625rem] -tracking-[.045rem] text-center text-blue-dark">
-            All included
+          <div className=" bg-gray-700 col-start-4 col-end-5 pr-[1.5rem] flex justify-end items-center rounded-r-[1.5rem]">
+            <div className="flex flex-col items-center max-w-max">
+              <div>
+                <Tick />
+              </div>
+              <div className="font-srif text-[1.125rem] leading-[1.5625rem] -tracking-[.045rem] text-center text-blue-dark">
+                All included
+              </div>
+            </div>
           </div>
         </div>
       </div>
