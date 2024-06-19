@@ -1,5 +1,5 @@
 import { GetVariants, Tailwindest } from "tailwindest";
-import { tw } from "../lib/tailwindest";
+import { TailwindCustom, tw } from "../lib/tailwindest";
 import { ChevronRight } from "./ChevronRight";
 import { ProfileIcon } from "./Profile";
 const button = tw.rotary({
@@ -131,6 +131,7 @@ interface ButtonProps {
   icon?: boolean;
   leftIcon?: boolean;
   width?: Tailwindest["width"];
+  custom?: TailwindCustom;
 }
 
 type TextButtonProps = Omit<ButtonProps, "icon" | "type"> & {
@@ -157,6 +158,7 @@ function Button(props: TextButtonLeftIcon | TextButtonRightIcon) {
     leftIcon = false,
     children,
     type = "text",
+    custom,
     width,
   } = props;
   return (
@@ -185,6 +187,7 @@ function Button(props: TextButtonLeftIcon | TextButtonRightIcon) {
                   height: "h-[3rem]",
                   width: "w-[3rem]",
                 },
+            custom ? custom : {},
           )
           .style(type),
         {

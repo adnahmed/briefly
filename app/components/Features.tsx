@@ -41,19 +41,29 @@ const dropdown = tw.toggle({
     opacity: "opacity-100",
     height: "h-auto",
     padding: "p-[1rem]",
-    width: "w-full",
+    zIndex: "-z-[0]",
+    "@desktop": {
+      width: "desktop:w-full",
+    },
   },
   falsy: {
     opacity: "opacity-0",
     height: "h-0",
     paddingY: "py-0",
+    zIndex: "-z-[1]",
   },
   base: {
+    position: "relative",
     transition: "transition-all ease-in-out",
     transitionDuration: "duration-300",
     backgroundColor: "bg-white",
-    width: "w-[37rem]",
-    // borderRadius: "rounded-2xl",
+    width: "w-[20rem]",
+    "@tablet": {
+      width: "tablet:w-[25rem]",
+    },
+    "@desktop": {
+      width: "desktop:w-[37rem]",
+    },
     display: "flex",
     flexDirection: "flex-col",
     gap: "gap-[1.75rem]",
@@ -67,7 +77,13 @@ const selectContainer = tw.toggle({
   base: {
     display: "flex",
     flexDirection: "flex-col",
-    width: "w-[40rem]",
+    "@desktop": {
+      width: "desktop:w-[40rem]",
+    },
+    width: "w-[20rem]",
+    "@tablet": {
+      width: "tablet:w-auto",
+    },
     borderRadius: "rounded-2xl",
     position: "relative",
     overflow: "overflow-hidden",
@@ -103,7 +119,7 @@ export function Feature({
             height={30.86}
             alt={`${title} icon`}
           />
-          <span className="font-serif font-bold leading-[2.3123rem] -tracking-[.05rem] text-[1.25rem]">
+          <span className="font-serif font-bold leading-[2.3123rem] -tracking-[.045rem] desktop:-tracking-[.05rem] desktop:text-[1.25rem] text-[1rem]">
             {title}
           </span>
         </div>
@@ -129,7 +145,7 @@ export function Feature({
           {description}
         </span>
         <Image
-          className="drop-shadow-xl rounded-[1.4rem] "
+          className="drop-shadow-xl rounded-[1.4rem]"
           src={feature_image ? feature_image : "/default_feature_image.png"}
           alt="feature image"
           width={400}

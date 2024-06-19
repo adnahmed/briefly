@@ -2,7 +2,6 @@ import Image from "next/image";
 import { tw } from "../lib/tailwindest";
 const footer = tw.toggle({
   base: {
-    paddingTop: "pt-[4rem]",
     paddingBottom: "pb-[1rem]",
     gap: "gap-[1.53rem]",
     display: "flex",
@@ -24,10 +23,17 @@ const footer = tw.toggle({
   },
   truthy: {
     height: "h-[28.9375rem]",
+    "@desktop": {
+      height: "desktop:h-[22.9375rem]",
+    },
     justifyContent: "justify-end",
   },
   falsy: {
-    height: "h-[16rem]",
+    paddingTop: "pt-[2rem]",
+    "@desktop": {
+      paddingTop: "desktop:pt-[4rem]",
+    },
+    // height: "h-[16rem]",
   },
 });
 
@@ -43,7 +49,9 @@ const footerStart = tw.style({
     alignItems: "desktop:items-center",
     justifyContent: "desktop:justify-center",
   },
-  height: "h-[9.438rem]",
+  "@tablet": {
+    // height: "tablet:h-[9.438rem]",
+  },
   width: "w-full",
 });
 
