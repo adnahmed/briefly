@@ -149,8 +149,8 @@ export default function Home() {
             <h2>Brieflly vs Others</h2>
           </div>
           <span className="max-w-[29.68rem] text-[#5A6772] desktop:text-start text-center">
-            We're changing the game! Brieflly offers a whole new approach to
-            driving business growth.
+            We&apos;re changing the game! Brieflly offers a whole new approach
+            to driving business growth.
           </span>
         </div>
         <BrieflyTable />

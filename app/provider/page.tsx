@@ -327,8 +327,8 @@ export default function Page() {
             <div className="leading-[1.48rem] -tracking-[.03rem] text-gray-950">
               We know the struggle that 65% of B2B businesses rely on
               third-party reviews to evaluate and choose service providers.
-              That's why we're here to collect reviews from your clients, so you
-              get all the exposure you deserve.
+              That&apos;s why we&apos;re here to collect reviews from your
+              clients, so you get all the exposure you deserve.
             </div>
           </div>
         </div>

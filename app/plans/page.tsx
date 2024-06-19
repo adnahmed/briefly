@@ -37,10 +37,11 @@ export default function Page() {
             The subscription for all your business plans
           </div>
           <div className="text-[#5A6772] desktop:text-[1.125rem] leading-[1.48rem]  desktop:leading-[1.665rem] -tracking-[.03rem] desktop:-tracking-[.03375rem]">
-            We understand that your needs are always evolving. So whether you're
-            searching for specific expertise now or might need something
-            different down the road, we've got your back with ongoing support
-            for your business through our subscription-based credits.
+            We understand that your needs are always evolving. So whether
+            you&apos;re searching for specific expertise now or might need
+            something different down the road, we&apos;ve got your back with
+            ongoing support for your business through our subscription-based
+            credits.
           </div>
           <Button
             custom={{

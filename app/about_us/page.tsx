@@ -223,10 +223,10 @@ export default function Page() {
             Our mission
           </div>
           <div className="leading-[1.48rem] -tracking-[.03rem] text-sky">
-            We’re on a mission to change the game in how businesses connect with
-            service providers. We're committed to making high quality services
-            accessible, affordable, and efficient, so businesses can reach their
-            goals and thrive.
+            We&apos;re on a mission to change the game in how businesses connect
+            with service providers. We&apos;re committed to making high quality
+            services accessible, affordable, and efficient, so businesses can
+            reach their goals and thrive.
           </div>
         </div>
         <Image
@@ -262,7 +262,7 @@ px-[1.5rem] py-[1.41rem]"
             <div>
               <div className="flex flex-col gap-[1rem]">
                 <div className="text-blue-dark font-serif text-[2rem] font-bold leading-[2.3125rem] -tracking-[.08rem]">
-                  Let's talk!
+                  Let&apos;s talk!
                 </div>
                 <div className="leading-[1.48rem] text-[#5A6772]">
                   We’re happy to answer your questions and introduce you to
@@ -315,9 +315,9 @@ px-[1.5rem] py-[1.41rem]"
           Ready to level up your business game?
         </div>
         <div className="mx-[1rem] tablet:mx-0 tablet:w-[47rem] text-center leading-[1.295rem] tablet:leading-[1.85rem] -tracking-[.02625rem] tablet:-tracking-[.0375rem] text-[#5A6772] text-[.875rem] tablet:text-[1.25rem]">
-          Brieflly can help you hit your business goals. Whether you're looking
-          for an expert or want to sign up as a service provider, join us today
-          and start your journey to success!
+          Brieflly can help you hit your business goals. Whether you&apos;re
+          looking for an expert or want to sign up as a service provider, join
+          us today and start your journey to success!
         </div>
         <div className="flex mt-[.5rem] gap-[1rem] justify-center items-center">
           <Button
