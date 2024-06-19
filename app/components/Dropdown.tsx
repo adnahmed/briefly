@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { tw } from "../lib/tailwindest";
+import { Arrow } from "./Arrow";
 const select = tw.toggle({
   base: {
     outlineStyle: "outline-none",
@@ -45,18 +46,6 @@ const selectedItem = tw.style({
   paddingLeft: "pl-1",
 });
 
-const arrow = tw.toggle({
-  truthy: {
-    transformRotate: "rotate-180",
-  },
-  falsy: {},
-  base: {
-    stroke: "stroke-blue-dark",
-    transition: "transition ease-out",
-    width: "w-2.5",
-    height: "h-2.5",
-  },
-});
 const dropdown = tw.toggle({
   truthy: {
     opacity: "opacity-100",
@@ -133,20 +122,7 @@ export function Dropdown({
         <span className={selectedItem.class}>
           {`${selected}${unit ? " " + unit : ""}`}
         </span>
-        <svg
-          className={`${arrow.class(showDropdown)} ${disabled ? "stroke-[#5A6772]" : ""}`}
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 10 6"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="m1 1 4 4 4-4"
-          />
-        </svg>
+        <Arrow on={showDropdown} disabled={disabled} />
       </button>
 
       <div className={dropdown.class(showDropdown)}>

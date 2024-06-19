@@ -13,10 +13,9 @@ const square = tw.variants({
   base: {
     position: "relative",
     overflow: "overflow-hidden",
-    maxHeight: "max-h-[22.875rem]",
-    "@tablet": {
-      height: "tablet:h-[28.5rem]",
-      maxHeight: "tablet:max-h-[28.5rem]",
+    // maxHeight: "max-h-[22.875rem]",
+    "@desktop": {
+      maxHeight: "desktop:max-h-[35rem]",
     },
     display: "flex",
     flexDirection: "flex-col",
@@ -76,12 +75,26 @@ const square = tw.variants({
         },
       },
       piggy: {
-        width: "w-[38rem]",
-        padding: "p-[2rem]",
+        "@tablet": {
+          width: "tablet:w-[38rem]",
+          padding: "tablet:p-[2rem]",
+          height: "tablet:h-[35rem]",
+        },
+        width: "w-[22.5rem]",
+        height: "h-[24.5rem]",
+        paddingY: "py-[1.5rem]",
+        paddingX: "px-[1rem]",
       },
       cart: {
-        width: "w-[38rem]",
-        padding: "p-[2rem]",
+        "@tablet": {
+          width: "tablet:w-[38rem]",
+          padding: "tablet:p-[2rem]",
+          height: "tablet:h-[35rem]",
+        },
+        width: "w-[22.5rem]",
+        height: "h-[24.5rem]",
+        paddingY: "py-[1.5rem]",
+        paddingX: "px-[1rem]",
       },
     },
   },
@@ -157,18 +170,38 @@ const squareSplash = tw.variants({
         },
       },
       piggy: {
-        bottom: "bottom-[9rem]",
-        right: "right-[7.19rem]",
         backgroundColor: "bg-blue-950",
-        width: "w-[12.345rem]",
-        height: "h-[12.345rem]",
+        width: "w-[9.5363rem]",
+        height: "h-[9.5363rem]",
+        bottom: "bottom-[10rem]",
+        right: "right-[5.19rem]",
+        "@tablet": {
+          bottom: "tablet:bottom-[16rem]",
+          right: "tablet:right-[11rem]",
+        },
+        "@desktop": {
+          bottom: "desktop:bottom-[15rem]",
+          right: "desktop:right-[10.19rem]",
+          width: "desktop:w-[12.345rem]",
+          height: "desktop:h-[12.345rem]",
+        },
       },
       cart: {
-        bottom: "bottom-[9rem]",
-        right: "right-[7.19rem]",
         backgroundColor: "bg-blue-950",
-        width: "w-[12.345rem]",
-        height: "h-[12.345rem]",
+        width: "w-[9.5363rem]",
+        height: "h-[9.5363rem]",
+        bottom: "bottom-[10rem]",
+        right: "right-[5.19rem]",
+        "@tablet": {
+          bottom: "tablet:bottom-[15rem]",
+          right: "tablet:right-[10rem]",
+        },
+        "@desktop": {
+          bottom: "desktop:bottom-[15rem]",
+          right: "desktop:right-[10.19rem]",
+          width: "desktop:w-[12.345rem]",
+          height: "desktop:h-[12.345rem]",
+        },
       },
     },
   },
@@ -237,19 +270,11 @@ const bento_title = tw.variants({
         color: "text-gray-950",
         stroke: "stroke-gray-950",
         backgroundColor: "bg-blue-950",
-        // top: "top-[-1rem]",
-        "@desktop": {
-          top: "desktop:top-[-3.5rem]",
-        },
       },
       cart: {
         color: "text-gray-950",
         stroke: "stroke-gray-950",
         backgroundColor: "bg-blue-950",
-        // top: "top-[-1rem]",
-        "@desktop": {
-          top: "desktop:top-[-3.5rem]",
-        },
       },
     },
   },
@@ -332,17 +357,15 @@ const bento_desc = tw.variants({
         },
       },
       piggy: {
-        lineHeight: "leading-[1.66rem]",
-        fontSize: "text-[1.125rem]",
-        "@desktop": {
-          top: "desktop:top-[-3rem]",
+        "@tablet": {
+          fontSize: "tablet:text-[1.125rem]",
+          lineHeight: "tablet:leading-[1.66rem]",
         },
       },
       cart: {
-        lineHeight: "leading-[1.66rem]",
-        fontSize: "text-[1.125rem]",
-        "@desktop": {
-          top: "desktop:top-[-3rem]",
+        "@tablet": {
+          lineHeight: "tablet:leading-[1.66rem]",
+          fontSize: "tablet:text-[1.125rem]",
         },
       },
     },

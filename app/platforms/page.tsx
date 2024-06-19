@@ -4,7 +4,7 @@ import { Feature } from "../components/Features";
 export default function Page() {
   return (
     <main>
-      <div className=" justify-center items-center desktop:h-[45rem] gap-[1.45rem] bg-[#FFF9F4] w-full flex flex-col-reverse desktop:flex-row desktop:py-[16rem]">
+      <div className="overflow-hidden justify-center items-center desktop:h-[45rem] gap-[1.45rem] bg-[#FFF9F4] w-full flex flex-col-reverse desktop:flex-row desktop:py-[16rem]">
         <div className="desktop:w-[38rem] mb-[2.75rem] desktop:mb-0 mt-[1.45rem] desktop:mt-0 text-center desktop:text-start mx-[.5rem]  z-10 tablet:w-[30rem] desktop:mx-auto flex flex-col gap-[1rem]">
           <div className="font-serif font-bold leading-[2.5rem] desktop:leading-[2.9375rem] -tracking-[.09rem] desktop:-tracking-[.1rem] text-[2.25rem] desktop:text-[2.5rem]">
             <span>One powerful platfrom.</span>
@@ -25,8 +25,6 @@ export default function Page() {
                 "@desktop": {
                   width: "desktop:w-max",
                 },
-                // minWidth: "min-w-full",
-                // fontSize: "text-[9.125rem]",
               }}
               type="platform"
             >
@@ -36,7 +34,7 @@ export default function Page() {
         </div>
         <DashboardImage />
       </div>
-      <div className="w-full px-[1rem] flex flex-col desktop:flex-row justify-center  desktop:justify-around items-center screen:justify-center bg-gray-950 screen:gap-[8rem]">
+      <div className="overflow-hidden w-full px-[1rem] flex flex-col desktop:flex-row justify-center  desktop:justify-around items-center screen:justify-center bg-gray-950 screen:gap-[8rem]">
         <div className="screen:w-[30rem] mt-[4rem] h-full  screen:py-[9.38rem] w-[25rem] flex flex-col gap-[1rem]">
           <div className="font-serif font-bold desktop:text-start text-center leading-[2.9375rem] -tracking-[.1rem] text-[2.5rem]">
             <span>All features </span>

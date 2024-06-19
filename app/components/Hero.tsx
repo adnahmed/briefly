@@ -38,11 +38,11 @@ export const HeroGetStarted = () => {
 
 const heroInputEmail = tw.style({
   borderRadius: "rounded-3xl",
+  maxWidth: "max-w-[234px]",
   "@tablet": {
     maxWidth: "tablet:max-w-[256px]",
     minWidth: "tablet:min-w-[256px]",
   },
-  minWidth: "min-w-full",
   height: "h-[3rem]",
   padding: "p-[1rem]",
   "::placeholder": {

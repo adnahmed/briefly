@@ -1,5 +1,8 @@
+"use client";
+import { useState } from "react";
 import { capitalize } from "../lib/helpers";
 import { tw } from "../lib/tailwindest";
+import { Arrow } from "./Arrow";
 import { Dropdown } from "./Dropdown";
 import { Tick } from "./Tick";
 
@@ -34,7 +37,9 @@ const corner = tw.variants({
   },
 });
 const pricing = tw.style({
-  height: "h-[31.5rem]",
+  "@tablet": {
+    height: "tablet:h-[31.5rem]",
+  },
   position: "relative",
   zIndex: "z-[3]",
   overflow: "overflow-hidden",
@@ -95,15 +100,36 @@ const tagButton = tw.variants({
     },
   },
 });
+const featuresList = tw.toggle({
+  base: {
+    display: "flex",
+    flexDirection: "flex-col",
+    gap: "gap-[.5rem]",
+    transition: "transition ease-in-out",
+    transitionProperty: "transition-all",
+    transitionDuration: "duration-100",
+  },
+  truthy: {},
+  falsy: {
+    transformScale: "scale-0",
+    height: "h-[0px]",
+    opacity: "opacity-0",
+    "@tablet": {
+      transformScale: "tablet:scale-100",
+      height: "tablet:h-[auto]",
+      opacity: "tablet:opacity-100",
+    },
+  },
+});
 export const Pricing = ({
   type,
 }: {
   type: "starter" | "basic" | "explorer" | "pro";
 }) => {
-  let features = [];
+  let features: string[] = [];
   let price = 0;
   let tag;
-  let credits = [];
+  let credits: string[] = [];
   let description;
   switch (type) {
     case "starter":
@@ -155,6 +181,7 @@ export const Pricing = ({
     default:
       break;
   }
+  const [showFeatures, setShowFeatures] = useState(false);
   return (
     <div className={pricingContainer.class({ type })}>
       <div className={pricing.class}>
@@ -187,10 +214,16 @@ export const Pricing = ({
             defaultOption={credits[credits.length - 1]}
             options={credits}
           />
+          <button
+            onClick={() => setShowFeatures(!showFeatures)}
+            className="flex tablet:hidden gap-[1rem] justify-start  items-center"
+          >
+            More Information <Arrow on={showFeatures} />
+          </button>
           <button className="flex py-[1rem] mt-[1rem] px-[1rem] rounded-3xl border-2 items-center justify-center max-h-[48px]  gap-[.5rem] duration-300 text-white bg-blue-dark border-blue-dark  hover:border-blue-dark-500 hover:bg-blue-dark-500 hover:text-blue-dark  hover:font-medium active:bg-blue-dark-900 active:border-blue-dark-900 active:text-white -tracking-[.04rem]">
             <div className="w-full">Start 14-day pro trial</div>
           </button>
-          <div className="flex flex-col gap-[.5rem]">
+          <div className={featuresList.class(showFeatures)}>
             {features.map((feature) => (
               <div
                 className="text-[.875rem] text-left leading-[1.295rem] -tracking-[.02625rem] text-blue-dark"
