@@ -13,54 +13,66 @@ const square = tw.variants({
   base: {
     position: "relative",
     overflow: "overflow-hidden",
-    height: "h-[28.5rem]",
+    maxHeight: "max-h-[22.875rem]",
+    "@tablet": {
+      height: "tablet:h-[28.5rem]",
+      maxHeight: "tablet:max-h-[28.5rem]",
+    },
     display: "flex",
     flexDirection: "flex-col",
     borderRadius: "rounded-2xl",
-    justifyContent: "justify-start",
+    justifyContent: "justify-between",
     alignItems: "items-center",
     backgroundColor: "bg-gray-100",
     borderWidth: "border-[1.5px]",
     gap: "gap-[.625rem]",
+    width: "w-[18.5rem]",
   },
   variants: {
     type: {
       brief: {
-        width: "w-[30rem]",
-        paddingX: "px-[2rem]",
+        paddingX: "px-[1rem]",
         paddingY: "py-[1.5rem]",
         "@tablet": {
           width: "tablet:w-[30.9rem]",
+          paddingX: "tablet:px-[2rem]",
         },
       },
       analytic: {
-        width: "w-[30rem]",
-        paddingX: "px-[1.43rem]",
+        paddingX: "px-[1rem]",
         paddingY: "py-[1.5rem]",
         "@tablet": {
-          width: "tablet:w-[30.9rem]",
+          width: "tablet:w-[30rem]",
+        },
+        "@desktop": {
+          width: "desktop:w-[30.9rem]",
+          paddingX: "desktop:px-[2rem]",
         },
       },
       management: {
-        width: "w-[46rem]",
         paddingX: "px-[1.43rem]",
         paddingY: "py-[1.5rem]",
         gradient: "bg-gradient-to-bl",
         gradientStart: "from-orange-100",
         gradientEnd: "to-white",
         "@tablet": {
-          width: "tablet:w-[47.38rem]",
+          width: "tablet:w-[42rem]",
+        },
+        "@desktop": {
+          width: "desktop:w-[47.38rem]",
         },
       },
       marketplace: {
         paddingX: "px-[1.54rem]",
         paddingY: "py-[1rem]",
-        width: "w-[46rem]",
         gradient: "bg-gradient-to-bl",
         gradientStart: "from-pink-100",
         gradientEnd: "to-white",
         "@tablet": {
-          width: "tablet:w-[47.38rem]",
+          width: "tablet:w-[42rem]",
+        },
+        "@desktop": {
+          width: "desktop:w-[47.38rem]",
         },
       },
       piggy: {
@@ -83,47 +95,65 @@ const squareSplash = tw.variants({
   variants: {
     type: {
       brief: {
-        bottom: "bottom-[4.53rem]",
-        right: "right-[3.28rem]",
+        width: "w-[7.625rem]",
+        height: "h-[7.625rem]",
         backgroundColor: "bg-blue-950",
-        width: "w-[12.345rem]",
-        height: "h-[12.345rem]",
         "@tablet": {
-          width: "tablet:w-[12.716rem]",
-          height: "tablet:h-[12.716rem]",
+          bottom: "tablet:bottom-[5.53rem]",
+          right: "tablet:right-[3.28rem]",
+          width: "tablet:w-[12.345rem]",
+          height: "tablet:h-[12.345rem]",
+        },
+        "@desktop": {
+          width: "desktop:w-[12.716rem]",
+          height: "desktop:h-[12.716rem]",
         },
       },
       analytic: {
-        bottom: "bottom-[4.97rem]",
-        right: "right-[3.22rem]",
         backgroundColor: "bg-green-light",
-        width: "w-[12.345rem]",
-        height: "h-[12.345rem]",
+        width: "w-[7.625rem]",
+        height: "h-[7.625rem]",
         "@tablet": {
-          width: "tablet:w-[12.716rem]",
-          height: "tablet:h-[12.716rem]",
+          bottom: "tablet:bottom-[4.97rem]",
+          right: "tablet:right-[3.22rem]",
+          width: "tablet:w-[12.345rem]",
+          height: "tablet:h-[12.345rem]",
+        },
+        "@desktop": {
+          width: "desktop:w-[12.716rem]",
+          height: "desktop:h-[12.716rem]",
         },
       },
       management: {
-        bottom: "bottom-[3.75rem]",
-        right: "right-[4.9rem]",
         backgroundColor: "bg-orange",
-        width: "w-[15.75rem]",
-        height: "h-[15.75rem]",
+        width: "w-[9.625rem]",
+        height: "h-[9.625rem]",
+        bottom: "bottom-[4.75rem]",
+        right: "right-[1.3rem]",
         "@tablet": {
-          width: "tablet:w-[16.225rem]",
-          height: "tablet:h-[16.225rem]",
+          bottom: "tablet:bottom-[5.75rem]",
+          right: "tablet:right-[4.9rem]",
+          width: "tablet:w-[12.75rem]",
+          height: "tablet:h-[12.75rem]",
+        },
+        "@desktop": {
+          width: "desktop:w-[14.225rem]",
+          height: "desktop:h-[14.225rem]",
         },
       },
       marketplace: {
-        bottom: "bottom-[7.84rem]",
-        right: "right-[5.53rem]",
         backgroundColor: "bg-pink",
-        width: "w-[12.345rem]",
-        height: "h-[12.345rem]",
+        width: "w-[7.625rem]",
+        height: "h-[7.625rem]",
         "@tablet": {
-          width: "tablet:w-[12.716rem]",
-          height: "tablet:h-[12.716rem]",
+          bottom: "tablet:bottom-[7.84rem]",
+          right: "tablet:right-[5.53rem]",
+          width: "tablet:w-[12.345rem]",
+          height: "tablet:h-[12.345rem]",
+        },
+        "@desktop": {
+          width: "desktop:w-[12.716rem]",
+          height: "desktop:h-[12.716rem]",
         },
       },
       piggy: {
@@ -151,7 +181,6 @@ const bento_title = tw.variants({
     justifyContent: "justify-center",
     alignItems: "items-center",
     gap: "gap-[.64rem]",
-    fontSize: "text-[1.25rem]",
     fontWeight: "font-bold",
     borderRadius: "rounded-3xl",
     paddingX: "px-[1rem]",
@@ -162,6 +191,7 @@ const bento_title = tw.variants({
     zIndex: "z-10",
     alignSelf: "self-start",
     "@tablet": {
+      fontSize: "tablet:text-[1.25rem]",
       paddingX: "tablet:px-[1.3rem]",
     },
   },
@@ -171,53 +201,54 @@ const bento_title = tw.variants({
         color: "text-gray-950",
         stroke: "stroke-gray-950",
         backgroundColor: "bg-blue-950",
-        top: "top-[-1rem]",
-        "@tablet": {
-          top: "tablet:top-[-3.5rem]",
+        "@screen": {
+          top: "screen:top-[-3.5rem]",
         },
       },
       analytic: {
         color: "text-green-dark",
         stroke: "stroke-green-dark",
         backgroundColor: "bg-green-light",
-        "@tablet": {
-          top: "tablet:top-[-2rem]",
+        "@screen": {
+          top: "screen:top-[-2rem]",
         },
       },
       management: {
         color: "text-white",
         stroke: "stroke-white",
         backgroundColor: "bg-orange",
-        top: "top-[-2rem]",
-        "@tablet": {
-          top: "tablet:top-[-3rem]",
+        "@screen": {
+          top: "screen:top-[-2rem]",
         },
       },
       marketplace: {
         backgroundColor: "bg-pink",
         stroke: "stroke-[#44003B]",
         color: "text-[#44003B]",
-        top: "top-[-2rem]",
+        top: "top-[-.5rem]",
         "@tablet": {
-          top: "tablet:top-[-3rem]",
+          top: "tablet:top-[-1rem]",
+        },
+        "@screen": {
+          top: "screen:top-[-2rem]",
         },
       },
       piggy: {
         color: "text-gray-950",
         stroke: "stroke-gray-950",
         backgroundColor: "bg-blue-950",
-        top: "top-[-1rem]",
-        "@tablet": {
-          top: "tablet:top-[-3.5rem]",
+        // top: "top-[-1rem]",
+        "@desktop": {
+          top: "desktop:top-[-3.5rem]",
         },
       },
       cart: {
         color: "text-gray-950",
         stroke: "stroke-gray-950",
         backgroundColor: "bg-blue-950",
-        top: "top-[-1rem]",
-        "@tablet": {
-          top: "tablet:top-[-3.5rem]",
+        // top: "top-[-1rem]",
+        "@desktop": {
+          top: "desktop:top-[-3.5rem]",
         },
       },
     },
@@ -226,7 +257,6 @@ const bento_title = tw.variants({
 
 const bentoContainer = tw.variants({
   base: {
-    maxWidth: "max-w-min",
     gradientEnd: "to-gray-100",
     gradient: "bg-gradient-to-b",
     padding: "p-[1px]",
@@ -258,57 +288,61 @@ const bentoContainer = tw.variants({
 
 const bento_desc = tw.variants({
   base: {
-    lineHeight: "leading-[1.66rem]",
-    alignSelf: "self-start",
     position: "relative",
+    alignSelf: "self-start",
     color: "text-[#5A6772]",
     maxWidth: "max-w-[36.5rem]",
-    letterSpacing: "tracking-[-.033rem]",
-    fontSize: "text-[1.125rem]",
+    fontSize: "text-[.875rem]",
+    lineHeight: "leading-[1.295rem]",
+    letterSpacing: "tracking-[-0.02625rem]",
     "@tablet": {
-      color: "tablet:text-black",
-      lineHeight: "tablet:leading-[1.71rem]",
-      fontSize: "tablet:text-[1.159rem]",
+      lineHeight: "tablet:leading-[1.66rem]",
+      letterSpacing: "tablet:tracking-[-.033rem]",
+      fontSize: "tablet:text-[1.125rem]",
+    },
+    "@desktop": {
+      lineHeight: "desktop:leading-[1.71rem]",
+      fontSize: "desktop:text-[1.159rem]",
     },
   },
   variants: {
     type: {
       brief: {
-        "@tablet": {
-          top: "tablet:top-[-3rem]",
+        "@screen": {
+          top: "screen:top-[-3rem]",
         },
       },
       analytic: {
-        "@tablet": {
-          top: "tablet:top-[-1.9rem]",
+        "@screen": {
+          top: "screen:top-[-1.9rem]",
         },
       },
       management: {
-        top: "top-[-1.5rem]",
-        "@tablet": {
-          top: "tablet:top-[-2.5rem]",
+        "@screen": {
+          top: "screen:top-[-2.5rem]",
         },
       },
       marketplace: {
-        top: "top-[-1.5rem]",
+        top: "top-[-.5rem]",
         "@tablet": {
-          top: "tablet:top-[-2.5rem]",
+          top: "tablet:top-[-1rem]",
+        },
+        "@screen": {
+          top: "screen:top-[-2.5rem]",
         },
       },
       piggy: {
-        "@tablet": {
-          top: "tablet:top-[-3rem]",
-          color: "tablet:text-[#5A6772]",
-          lineHeight: "tablet:leading-[1.66rem]",
-          fontSize: "tablet:text-[1.125rem]",
+        lineHeight: "leading-[1.66rem]",
+        fontSize: "text-[1.125rem]",
+        "@desktop": {
+          top: "desktop:top-[-3rem]",
         },
       },
       cart: {
-        "@tablet": {
-          top: "tablet:top-[-3rem]",
-          color: "tablet:text-[#5A6772]",
-          lineHeight: "tablet:leading-[1.66rem]",
-          fontSize: "tablet:text-[1.125rem]",
+        lineHeight: "leading-[1.66rem]",
+        fontSize: "text-[1.125rem]",
+        "@desktop": {
+          top: "desktop:top-[-3rem]",
         },
       },
     },
@@ -321,53 +355,76 @@ export const BentoSquare = ({
   type: "brief" | "analytic" | "management" | "marketplace" | "piggy" | "cart";
 }) => {
   const tablet = useBreakpoint("tablet");
+  const screen = useBreakpoint("screen");
   let image_src = "";
-  let width;
-  let height;
+  let width = 184;
+  let height = 184;
   let title;
   let icon;
   let description;
   switch (type) {
     case "brief":
       image_src = "/notepad@2x.png";
-      width = tablet ? 298.6 : 240;
-      height = tablet ? 298.6 : 240;
+      if (screen) {
+        width = 298.6;
+        height = 298.6;
+      } else if (tablet) {
+        width = 240;
+        height = 240;
+      }
       title = "AI Brief";
       icon = <AIBrainChip />;
       description =
-        "Empower your projects with AI-driven briefs that streamline communication and ensure clarity, accuracy, and efficiency.";
+        "Let our AI craft your project briefs, so you can focus on the work that matters most.";
       break;
     case "analytic":
       image_src = "/bars.webp";
-      width = tablet ? 308.8 : 240;
-      height = tablet ? 308.8 : 240;
+      if (screen) {
+        width = 308.8;
+        height = 308.8;
+      } else if (tablet) {
+        width = 240;
+        height = 240;
+      }
       title = "Analytic Analysis";
       icon = <UpGraphCircle />;
       description =
-        "Harness data with advanced analytics for actionable insights to drive better decision-making.";
+        "Gain the insights you need to drive actionable outcomes and make smarter decisions.";
       break;
     case "management":
       image_src = "/suitcase@2x.png";
-      width = tablet ? 308.8 : 276;
-      height = tablet ? 308.8 : 276;
+      if (screen) {
+        width = 308.8;
+        height = 308.8;
+      } else if (tablet) {
+        width = 240;
+        height = 240;
+      }
       title = "Management Tool";
       icon = <Shredder />;
       description =
-        "Utilize cutting-edge tools to manage your projects and track progress seamlessly.";
+        "Achieve more with our tools. Seamless project management and progress tracking made easy.";
       break;
     case "marketplace":
       image_src = "/bag.png";
-      width = tablet ? 308.8 : 276;
-      height = tablet ? 308.8 : 276;
+      if (screen) {
+        width = 308.8;
+        height = 308.8;
+      } else if (tablet) {
+        width = 276;
+        height = 276;
+      }
       title = "Open Marketplace";
       icon = <ShoppingBag />;
       description =
-        "Explore a curated marketplace of experts in marketing, development, creative, and business services.";
+        "Connect with experts in marketing, development, creative, and business services, all carefully curated to perfectly match your needs.";
       break;
     case "piggy":
       image_src = "/piggy.webp";
-      width = 285.594;
-      height = 285.594;
+      if (tablet) {
+        width = 285.594;
+        height = 285.594;
+      }
       title = "What are credits?";
       icon = <BankIcon />;
       description =
@@ -375,8 +432,10 @@ export const BentoSquare = ({
       break;
     case "cart":
       image_src = "/cart.webp";
-      width = 285.59;
-      height = 285.59;
+      if (tablet) {
+        width = 285.59;
+        height = 285.59;
+      }
       title = "How credits work?";
       icon = <ReceiptIcon />;
       description =
@@ -384,7 +443,7 @@ export const BentoSquare = ({
       break;
   }
   return (
-    <div className={bentoContainer.class({ type })}>
+    <div className={bentoContainer.class({ type })} dir="ltr">
       <div className={square.class({ type })}>
         <div className={squareSplash.class({ type })}></div>
         <Image
@@ -394,11 +453,13 @@ export const BentoSquare = ({
           height={height}
           src={image_src}
         />
-        <div className={bento_title.class({ type })}>
-          <span>{icon}</span>
-          <span>{title}</span>
+        <div className="flex justify-start gap-[1rem] flex-col">
+          <div className={bento_title.class({ type })}>
+            <span>{icon}</span>
+            <span>{title}</span>
+          </div>
+          <span className={bento_desc.class({ type })}>{description}</span>
         </div>
-        <span className={bento_desc.class({ type })}>{description}</span>
       </div>
     </div>
   );

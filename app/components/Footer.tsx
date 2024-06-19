@@ -7,12 +7,13 @@ const footer = tw.toggle({
     gap: "gap-[1.53rem]",
     display: "flex",
     flexDirection: "flex-col",
-    borderTopRadius: "rounded-t-[5rem]",
     backgroundColor: "bg-blue-950",
     width: "w-full",
     paddingLeft: "pl-[3rem]",
     paddingRight: "pr-[3.06rem]",
+    borderTopRadius: "rounded-t-[1rem]",
     "@desktop": {
+      borderTopRadius: "desktop:rounded-t-[5rem]",
       paddingLeft: "desktop:pl-[14rem]",
       paddingRight: "desktop:pr-[14.06rem]",
     },
@@ -32,7 +33,16 @@ const footer = tw.toggle({
 
 const footerStart = tw.style({
   display: "flex",
-  gap: "gap-[7.5rem]",
+  gap: "gap-[3.5rem]",
+  flexDirection: "flex-col-reverse",
+  marginX: "mx-auto",
+  maxWidth: "max-w-[1444px]",
+  "@desktop": {
+    gap: "desktop:gap-[7.5rem]",
+    flexDirection: "desktop:flex-row",
+    alignItems: "desktop:items-center",
+    justifyContent: "desktop:justify-center",
+  },
   height: "h-[9.438rem]",
   width: "w-full",
 });
@@ -53,6 +63,10 @@ const business_logo = tw.style({
 });
 const heroButtons = tw.style({
   display: "flex",
+  flexWrap: "flex-wrap",
+  "@desktop": {
+    flexWrap: "desktop:flex-nowrap",
+  },
   justifyContent: "justify-between",
   alignItems: "items-center",
   width: "w-full",

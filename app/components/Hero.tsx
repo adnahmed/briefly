@@ -1,3 +1,4 @@
+"use client";
 import { MouseEventHandler } from "react";
 import { tw } from "../lib/tailwindest";
 import { useBreakpoint } from "../lib/useBreakpoint";
@@ -8,7 +9,9 @@ const heroGetStarted = tw.style({
   display: "flex",
   alignItems: "items-center",
   justifyContent: "justify-center",
-  gap: "gap-1",
+  "@tablet": {
+    gap: "tablet:gap-1",
+  },
   backgroundColor: "bg-blue-dark",
   color: "text-sky",
   stroke: "stroke-sky",
@@ -20,13 +23,14 @@ const heroGetStarted = tw.style({
     color: "hover:text-gray-950",
     stroke: "hover:stroke-gray-950",
   },
-  margin: "m-2",
+  // margin: "m-2",
 });
 
 export const HeroGetStarted = () => {
+  const tablet = useBreakpoint("tablet");
   return (
     <button type="submit" className={heroGetStarted.class}>
-      Get Started
+      {tablet ? "Get Started" : undefined}
       <ChevronRight />
     </button>
   );
@@ -34,7 +38,11 @@ export const HeroGetStarted = () => {
 
 const heroInputEmail = tw.style({
   borderRadius: "rounded-3xl",
-  maxWidth: "max-w-[256px]",
+  "@tablet": {
+    maxWidth: "tablet:max-w-[256px]",
+    minWidth: "tablet:min-w-[256px]",
+  },
+  minWidth: "min-w-full",
   height: "h-[3rem]",
   padding: "p-[1rem]",
   "::placeholder": {

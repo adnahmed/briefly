@@ -175,6 +175,10 @@ function Button(props: TextButtonLeftIcon | TextButtonRightIcon) {
                       ? "pr-[1rem]"
                       : undefined,
                   paddingY: "py-[1rem]",
+                  height: "h-[2.5rem]",
+                  "@desktop": {
+                    height: "desktop:h-full",
+                  },
                 }
               : {
                   borderRadius: "rounded-[1.75rem]",

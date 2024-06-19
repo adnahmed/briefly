@@ -1,6 +1,6 @@
 export const Cross = ({ text }: { text: string }) => {
   return (
-    <div className="flex items-center max-w-max justify-center shrink">
+    <div className="flex items-center gap-[.5rem] justify-center ">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="32"
@@ -23,7 +23,9 @@ export const Cross = ({ text }: { text: string }) => {
           strokeLinejoin="round"
         />
       </svg>
-      <span className="max-w-[15rem] text-left">{text}</span>
+      <span className="max-w-[18rem] desktop:max-w-[15rem] text-left">
+        {text}
+      </span>
     </div>
   );
 };
