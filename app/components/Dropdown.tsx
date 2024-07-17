@@ -12,7 +12,6 @@ const select = tw.toggle({
     justifyContent: "justify-between",
     alignItems: "items-center",
     borderRadius: "rounded-3xl",
-    position: "relative",
   },
   truthy: {
     borderColor: "border-blue-dark-300",
@@ -46,31 +45,22 @@ const selectedItem = tw.style({
   paddingLeft: "pl-1",
 });
 
-const dropdown = tw.toggle({
-  truthy: {
-    opacity: "opacity-100",
-    position: "absolute",
-    zIndex: "z-50",
-    marginTop: "mt-[55px]",
-  },
-  falsy: {
-    opacity: "opacity-0",
-    height: "h-0",
-    width: "w-0",
-    zIndex: "-z-50",
-  },
-  base: {
-    transition: "transition ease-in-out",
-    width: "w-full",
-    backgroundColor: "bg-white",
-    boxShadow: "shadow-lg",
-    filterDropShadow: "drop-shadow-sm",
-    borderRadius: "rounded-2xl",
-  },
+const dropdown = tw.style({
+  marginTop: "mt-[.5rem]",
+  overflow: "overflow-hidden",
+  transition: "transition ease-in-out",
+  width: "w-full",
+  backgroundColor: "bg-white",
+  boxShadow: "shadow-lg",
+  filterDropShadow: "drop-shadow-sm",
+  borderRadius: "rounded-2xl",
 });
 
 const dropdownList = tw.style({
   paddingY: "py-2",
+  display: "flex",
+  flexDirection: "flex-col",
+  gap: "gap-[.5rem]",
   color: "text-blue-dark-600",
 });
 
@@ -83,11 +73,17 @@ const dropdownListItem = tw.style({
   paddingX: "px-[.5em]",
 });
 
-const selectContainer = tw.style({
-  display: "flex",
-  position: "relative",
-  zIndex: "z-50",
-  flexDirection: "flex-col",
+const selectContainer = tw.toggle({
+  base: {
+    display: "grid",
+    minHeight: "min-h-max",
+  },
+  truthy: {
+    gridTemplateRows: "grid-rows-[min-content_1fr]",
+  },
+  falsy: {
+    gridTemplateRows: "grid-rows-[min-content_0fr]",
+  },
 });
 
 export function Dropdown({
@@ -111,7 +107,13 @@ export function Dropdown({
     if (onChange) onChange(selected);
   };
   return (
-    <div className={selectContainer.class}>
+    <div
+      style={{
+        transitionProperty: "grid-template-rows",
+        transitionDuration: "300ms",
+      }}
+      className={selectContainer.class(showDropdown)}
+    >
       <button
         onClick={() => {
           if (disabled) return;
@@ -125,7 +127,7 @@ export function Dropdown({
         <Arrow on={showDropdown} disabled={disabled} />
       </button>
 
-      <div className={dropdown.class(showDropdown)}>
+      <div className={dropdown.class}>
         <ul className={dropdownList.class}>
           {options.map((o) => (
             <li

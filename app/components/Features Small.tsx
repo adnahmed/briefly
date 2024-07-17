@@ -100,6 +100,7 @@ export function FeatureSmall({
     } else {
       setShowFeature(true);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentFeature, tablet]);
   return (
     <div className={selectContainer.class(showFeature)}>

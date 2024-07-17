@@ -5,7 +5,7 @@ import { BrieflyTable } from "../components/BrieflyTable";
 import { GlowingStar } from "../components/GlowingStar";
 import { GroupIcon } from "../components/GroupIcon";
 import { HeroGetStarted, HeroInputEmail } from "../components/Hero";
-import { Logos } from "../components/Logos";
+import { LogoSlider } from "../components/LogoSlider";
 import { tw } from "../lib/tailwindest";
 
 const hero = tw.style({
@@ -123,7 +123,7 @@ export default function Home() {
             height={616}
             alt="hero video"
           />
-          <div className="w-full h-full flex justify-center items-center overflow-hidden absolute z-20 top-0">
+          <div className="w-full h-full flex hover:bg-black hover:bg-opacity-30 transition-all duration-200  justify-center items-center overflow-hidden absolute z-20 top-0">
             <BannerVideo />
           </div>
         </div>
@@ -155,62 +155,22 @@ export default function Home() {
         </div>
         <BrieflyTable />
         <div className={topCompanies.class}>
-          <div className="flex flex-col desktop:flex-row text-center desktop:text-start  items-center justify-center gap-[5rem]">
-            <div className="desktop:w-[30rem] mx-[1rem] desktop:mx-auto max-w-max">
-              <div className="flex flex-col font-serif text-[2rem] desktop:text-[2.5rem] font-bold leading-[2.125rem] desktop:leading-[2.625rem] desktop:-tracking-[.1rem] -tracking-[.08rem]">
-                <div className="text-blue-dark-950">Top companies are</div>
-                <div className="text-blue-950">growing with Brieflly</div>
-              </div>
-              <div className=" text-[#5A6772] desktop:leading-[1.48rem] leading-[1.33rem] -tracking-[.03rem] desktop:max-w-[25rem]">
-                Join the top companies who count on Brieflly for all their
-                business needs!
-              </div>
-            </div>
-            <div className="flex  min-w-full desktop:min-w-max flex-wrap justify-center items-center gap-[3rem] desktop:gap-[5rem]">
-              <Logos type="microsoft" />
-              <Logos type="spotify" />
-              <Logos type="airbnb" />
-            </div>
-          </div>
-          <div className="flex flex-wrap desktop:flex-nowrap gap-[2rem] text-center w-full justify-center tablet:gap-[3rem] items-center">
-            <div className="flex gap-[1rem] tablet:gap-[3rem]">
-              <div className="flex flex-col">
-                <div className="text-[2.25rem] leading-[2.375rem] -tracking-[.09rem] font-bold font-serif text-blue-950 text-center">
-                  40M
+          <div className="flex flex-col text-center tablet:text-start items-center justify-center gap-[5rem]">
+            <div className="mx-[1rem] desktop:mx-auto max-w-max">
+              <div className="font-serif text-[2rem] desktop:text-[2.5rem] font-bold leading-[2.125rem] desktop:leading-[2.625rem] desktop:-tracking-[.1rem] -tracking-[.08rem]">
+                <div className="tablet:inline text-blue-dark-950">
+                  Top companies are{" "}
                 </div>
-                <span className="leading-[1.48rem] -tracking-[.03rem]">
-                  Lorem ipsum dolor sit amet, 
-                </span>
-              </div>
-              <div className="flex flex-col">
-                <div className="text-[2.25rem] leading-[2.375rem] -tracking-[.09rem] font-bold font-serif text-blue-950 text-center">
-                  40M
+                <div className="tablet:inline text-blue-950">
+                  growing with Brieflly
                 </div>
-                <span className="leading-[1.48rem] -tracking-[.03rem]">
-                  Lorem ipsum dolor sit amet, 
-                </span>
               </div>
-            </div>
-            <div className="flex gap-[1rem] tablet:gap-[3rem]">
-              <div className="flex flex-col">
-                <div className="text-[2.25rem] leading-[2.375rem] -tracking-[.09rem] font-bold font-serif text-blue-950 text-center">
-                  40M
-                </div>
-                <span className="leading-[1.48rem] -tracking-[.03rem]">
-                  Lorem ipsum dolor sit amet, 
-                </span>
-              </div>
-
-              <div className="flex flex-col">
-                <div className="text-[2.25rem] leading-[2.375rem] -tracking-[.09rem] font-bold font-serif text-blue-950 text-center">
-                  40M
-                </div>
-                <span className="leading-[1.48rem] -tracking-[.03rem]">
-                  Lorem ipsum dolor sit amet, 
-                </span>
+              <div className="text-[#5A6772] desktop:leading-[1.48rem] leading-[1.33rem] -tracking-[.03rem]">
+              As we evolve, we align our growth with industry leaders. Join us and grow together with the best in the business.
               </div>
             </div>
           </div>
+          <LogoSlider />
         </div>
       </div>
     </main>

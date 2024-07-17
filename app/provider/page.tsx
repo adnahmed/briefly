@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { GetStartedButton } from "../components/GetStartedButton";
+import { RevenueCount } from "../components/RevenueCount";
 import { SmallFeatures } from "../components/SmallFeatures";
 import { TextField } from "../components/TextField";
 import { Tick } from "../components/Tick";
@@ -39,6 +40,10 @@ const Step = ({
   return (
     <div
       className="rounded-[2rem]
+      hover:scale-[1.1]
+      transition-transform
+      duration-200
+      ease-in-out
   bg-gray-400
   p-[1.5rem]
   flex flex-col gap-[2rem]
@@ -263,9 +268,7 @@ export default function Page() {
           <div className="text-[1.25rem] leading-[1.85rem] -tracking-[.0375rem] text-[#5A6772]">
             Boost revenue up to
           </div>
-          <div className="colorful-wave bg-clip-text text-transparent text-[3rem] font-serif font-bold -tracking-[.12rem] leading-[3.4375rem]">
-            78%
-          </div>
+          <RevenueCount />
         </div>
       </div>
       <div className="flex flex-col px-[1rem] tablet:px-0 justify-center items-center gap-[.5rem] mb-[5.5rem] mt-[4.91rem] tablet:mt-[6rem]">

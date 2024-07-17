@@ -2,36 +2,8 @@ import Image from "next/image";
 import Button from "../components/Button";
 import { Logos } from "../components/Logos";
 import { TextArea, TextField } from "../components/TextField";
+import { Value } from "../components/Value";
 
-const Value = ({
-  icon,
-  title,
-  description,
-}: {
-  icon: string;
-  title: string;
-  description: string;
-}) => {
-  return (
-    <div className="flex flex-col gap-[1rem] max-w-max">
-      <Image
-        className="self-center"
-        src={icon}
-        width={56}
-        height={56}
-        alt="value icon"
-      />
-      <div className="tablet:w-[19rem] flex flex-col gap-[.625rem]">
-        <div className="leading-[1.25rem] -tracking-[.05rem] font-serif text-center font-bold text-blue-dark">
-          {title}
-        </div>
-        <div className="leading-[1.295rem] max-w-[10.5rem] tablet:max-w-max -tracking-[.02625rem] text-[.875rem] text-[#5A6772] text-center">
-          {description}
-        </div>
-      </div>
-    </div>
-  );
-};
 export default function Page() {
   return (
     <main>

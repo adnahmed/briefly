@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import { FooterWithTarget } from "../components/FooterWithTarget";
 import { Header } from "../components/Header";
 import "../globals.css";
+import Head from 'next/head';
 
 const dm_sans = DM_Sans({
   subsets: ["latin"],
@@ -18,6 +19,9 @@ const host_grotesk = localFont<`--${string}`>({
 export const metadata: Metadata = {
   title: "Brieflly",
   description: "Your platform to grow your business.",
+  icons: {
+    icon: '/fav_icon.png',
+  },
 };
 
 export default function RootLayout({
@@ -27,7 +31,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${dm_sans.className} ${host_grotesk.className}`}>
+      <Head>
+        <link rel="icon" href="/fav_icon.png" type="image/x-icon" />
+        {/* <meta name="description" content={metadata.description || "Default Description"} /> */}
+      </Head>
+        <body className={`${dm_sans.className} ${host_grotesk.className}`}>
         <Header />
         {children}
         <FooterWithTarget

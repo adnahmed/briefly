@@ -10,10 +10,12 @@ const bento = tw.style({
   overflow: "overflow-x-auto",
   flexWrap: "flex-nowrap",
   marginX: "mx-[2rem]",
+  paddingY: "py-[1rem]",
   "@tablet": {
     gap: "tablet:gap-[2rem]",
   },
   "@desktop": {
+    alignItems: "desktop:items-center",
     marginTop: "desktop:mt-[4rem]",
     flexDirection: "desktop:flex-col",
   },
@@ -47,19 +49,10 @@ export const BentoContainer = () => {
       }}
       className={bento.class}
     >
-      <div className=" snap-center">
-        <BentoSquare type="marketplace" />
-      </div>
-      <div className="snap-center">
-        <BentoSquare type="brief" />
-      </div>
-
-      <div className=" snap-center">
-        <BentoSquare type="management" />
-      </div>
-      <div className=" snap-center">
-        <BentoSquare type="analytic" />
-      </div>
+      <BentoSquare type="marketplace" />
+      <BentoSquare type="brief" />
+      <BentoSquare type="management" />
+      <BentoSquare type="analytic" />
     </div>
   );
 };

@@ -1,9 +1,10 @@
 "use client";
 import { useState } from "react";
+import { Rect, useRect } from "react-use-rect";
 import { capitalize } from "../lib/helpers";
 import { tw } from "../lib/tailwindest";
+import { useMousePosition } from "../lib/useMousePosition";
 import { Arrow } from "./Arrow";
-import { Dropdown } from "./Dropdown";
 import { Tick } from "./Tick";
 
 const corner = tw.variants({
@@ -18,6 +19,7 @@ const corner = tw.variants({
     height: "h-[12.625rem]",
     gradient: "bg-gradient-to-bl",
     gradientEnd: "to-gray-100",
+    animation: "animate-spin-slow",
   },
   variants: {
     type: {
@@ -41,7 +43,7 @@ const pricing = tw.style({
     height: "tablet:h-[31.5rem]",
   },
   position: "relative",
-  zIndex: "z-[3]",
+  zIndex: "z-[1]",
   overflow: "overflow-hidden",
   backgroundColor: "bg-gray-100",
   padding: "p-[1.5rem]",
@@ -52,7 +54,6 @@ const pricingContainer = tw.variants({
     borderRadius: "rounded-2xl",
     width: "w-max",
     padding: "p-[2px]",
-    gradient: "bg-gradient-to-b",
     gradientEnd: "to-gray-950",
   },
   variants: {
@@ -123,59 +124,61 @@ const featuresList = tw.toggle({
 });
 export const Pricing = ({
   type,
+  quarterly = false,
 }: {
   type: "starter" | "basic" | "explorer" | "pro";
+  quarterly?: boolean;
 }) => {
   let features: string[] = [];
   let price = 0;
   let tag;
-  let credits: string[] = [];
+  let credits: number = 0;
   let description;
+  const { x, y } = useMousePosition();
+  const [rect, setRect] = useState<Rect | null>(null);
+  const [rectRef] = useRect(setRect);
   switch (type) {
     case "starter":
-      credits = ["100"];
-      description = "Get started with Brieflly and explore its integrations.";
+      credits = 100;
+      description = "Get started with Brieflly";
       features = [
-        "Unlimited users",
-        "Access to 50+ data providers",
-        "AI message writing",
-        "Up to 100 per people/company search",
+        "Brieflly AI : Prompt",
+        "Project price structure",
       ];
       break;
     case "basic":
-      credits = ["100", "2000"];
-      price = 149;
-      description = "Perfect for individuals and professional recruiters.";
+      credits = quarterly ? 12769 : 3999;
+      price = quarterly ? 7497 : 2499;
+      description = "Everything in Starter, plus:";
       features = [
-        "Unlimited users",
-        "Export to CSV",
-        "Create unlimited tables",
-        "Use your own API keys",
-        "Up to 5,000 per people/company search",
+        "Match with the top agencies",
+        "Project management system",
+        "Team Management",
+        "Assets storage: 80 GB",
       ];
       break;
     case "explorer":
       tag = "Most popular";
-      credits = ["100", "2000", "10000"];
-      description = "Best for early-stage startups and growth agencies.";
-      price = 349;
+      credits = quarterly ? 28389 : 9069;
+      description = "Everything in Basic, plus:";
+      price = quarterly ? 16497 : 5499;
       features = [
-        "Unlimited users",
-        "Email tool integrations",
-        "Get data from anywhere",
-        "Send data anywhere",
-        "Up to 25,000 per people/company search",
+        "Performance reporting system",
+        "Social analytics tool",
+        "Campaign Management tool",
+        "Assets storage: 200 GB",
       ];
       break;
     case "pro":
       tag = "Best value";
-      credits = ["100", "2000", "10000"];
-      price = 800;
-      description = "Best for growth teams and expanding companies.";
+      credits = quarterly ? 65219 : 21099;
+      price = quarterly ? 37497 : 12499;
+      description = "Everything in Explorer, plus:";
       features = [
-        "Unlimited users",
-        "CRM integrations",
-        "Up to 50,000 per people/company search",
+        "Dedicated account manager and project manager",
+        "Premium matches",
+        "Priorized briefs",
+        "Assets storage: 1 TB",
       ];
       break;
     default:
@@ -183,7 +186,16 @@ export const Pricing = ({
   }
   const [showFeatures, setShowFeatures] = useState(false);
   return (
-    <div className={pricingContainer.class({ type })}>
+    <div
+      ref={rectRef}
+      style={{
+        //@ts-ignore
+        "--x": `${x - rect?.left}px`,
+        //@ts-ignore
+        "--y": `${y - rect?.top}px`,
+      }}
+      className={`${pricingContainer.class({ type })} bg-radient-[150%_50%_at_var(--x)_var(--y)] relative z-[1]`}
+    >
       <div className={pricing.class}>
         <div className={corner.class({ type })}></div>
         <div className="w-[14.5rem] flex gap-[.5rem] flex-col">
@@ -200,20 +212,20 @@ export const Pricing = ({
           </div>
           <div className="font-serif flex gap-[1rem] items-center">
             <span className="leading-[2.5625rem] -tracking-[.05rem] font-bold text-[1.25rem]">
-              {price ? `$${price}` : "Free"}
+              {price ? `$${price.toLocaleString()}` : "Free"}
             </span>
             {price ? (
+               quarterly?
               <span className="text-[.8125rem] leading-[1.2025rem] -tracking-[.02438rem] text-[#5A6772B2] ">
-                Billed monthly
+               Billed quarterly
+              </span>
+              :
+              <span className="text-[.8125rem] leading-[1.2025rem] -tracking-[.02438rem] text-[#5A6772B2] ">
+               Billed monthly
               </span>
             ) : undefined}
           </div>
-          <Dropdown
-            unit="credits/month"
-            disabled={credits.length === 1}
-            defaultOption={credits[credits.length - 1]}
-            options={credits}
-          />
+          <div>{credits.toLocaleString()} credits/month</div>
           <button
             onClick={() => setShowFeatures(!showFeatures)}
             className="flex tablet:hidden gap-[1rem] justify-start  items-center"
@@ -221,7 +233,7 @@ export const Pricing = ({
             More Information <Arrow on={showFeatures} />
           </button>
           <button className="flex py-[1rem] mt-[1rem] px-[1rem] rounded-3xl border-2 items-center justify-center max-h-[48px]  gap-[.5rem] duration-300 text-white bg-blue-dark border-blue-dark  hover:border-blue-dark-500 hover:bg-blue-dark-500 hover:text-blue-dark  hover:font-medium active:bg-blue-dark-900 active:border-blue-dark-900 active:text-white -tracking-[.04rem]">
-            <div className="w-full">Start 14-day pro trial</div>
+            <div className="w-full">Start 14-day {type} trial</div>
           </button>
           <div className={featuresList.class(showFeatures)}>
             {features.map((feature) => (

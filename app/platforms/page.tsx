@@ -7,7 +7,7 @@ export default function Page() {
       <div className="overflow-hidden justify-center items-center desktop:h-[45rem] gap-[1.45rem] bg-[#FFF9F4] w-full flex flex-col-reverse desktop:flex-row desktop:py-[16rem]">
         <div className="desktop:w-[38rem] mb-[2.75rem] desktop:mb-0 mt-[1.45rem] desktop:mt-0 text-center desktop:text-start mx-[.5rem]  z-10 tablet:w-[30rem] desktop:mx-auto flex flex-col gap-[1rem]">
           <div className="font-serif font-bold leading-[2.5rem] desktop:leading-[2.9375rem] -tracking-[.09rem] desktop:-tracking-[.1rem] text-[2.25rem] desktop:text-[2.5rem]">
-            <span>One powerful platfrom.</span>
+            <span>One powerful platform.</span>
             <div>
               <span className="text-orange mr-[1rem]">Endless</span>
               <span>possibilities.</span>
@@ -18,12 +18,12 @@ export default function Page() {
             It’s where work flows between you, your partners, and the tools you
             need to fuel your business’s success.
           </div>
-          <div className="w-full">
+          <div className="w-full flex justify-center desktop:justify-start">
             <Button
               custom={{
                 width: "w-full",
-                "@desktop": {
-                  width: "desktop:w-max",
+                "@tablet": {
+                  width: "tablet:w-max",
                 },
               }}
               type="platform"
@@ -71,31 +71,37 @@ export default function Page() {
             icon="/f_1.png"
             title="Matchmaking marketplace"
             description="Every business is unique. That's why we're here to match you with the exact expertise you need to nail your goals, no matter your business size or budget."
+            type="market"
           />
           <Feature
             icon="/f_2.png"
             title="Research vetting"
             description="With our strict vetting and high standards, rest assured you’ll only collaborate with the best to achieve the results you’re aiming for. No fluff, just real outcomes."
+            type="research"
           />
           <Feature
             icon="/f_3.png"
             title="Secure payment"
             description="We take great care to protect your payment details. We are committed to employ payment security measures to safeguard your transactions and private data."
+            type="payment_secure"
           />
           <Feature
             icon="/f_4.png"
             title="Monitoring performance"
             description="The dashboard that truly works for you. See everything in real-time and get data-driven insights at your fingertips. You’ll hit every milestone and achieve success."
+            type="monitoring"
           />
           <Feature
             icon="/f_5.png"
             title="Reporting"
             description="We've got your back with insightful reports that guide you in creating the perfect strategies and making informed decisions. Pave the way to success confidently."
+            type="reporting"
           />
           <Feature
             icon="/f_6.png"
             title="Unified management solution"
             description="Brieflly empowers your growth with top-notch business intelligence and on-demand scalability. Effortlessly expand your team with elite professionals, streamline your operations, and drive success with confidence."
+            type="management"
           />
         </div>
         <Button

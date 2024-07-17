@@ -9,6 +9,8 @@ const table = tw.style({
   marginTop: "mt-[3.5rem]",
   marginBottom: "mb-[1.5rem]",
   "@tablet": {
+    display: "tablet:grid",
+    gridTemplateColumns: "tablet:grid-cols-2",
     marginBottom: "tablet:-mb-[3rem]",
   },
   marginX: "mx-auto",
@@ -18,6 +20,7 @@ const table = tw.style({
   flexDirection: "flex-row",
   flexWrap: "flex-wrap",
   "@desktop": {
+    display: "desktop:flex",
     marginBottom: "desktop:mb-[5.06rem]",
     flexDirection: "desktop:flex-row",
     gap: "desktop:gap-0",

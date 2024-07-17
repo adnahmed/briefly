@@ -18,6 +18,9 @@ const host_grotesk = localFont<`--${string}`>({
 export const metadata: Metadata = {
   title: "Brieflly",
   description: "Your platform to grow your business.",
+  icons: {
+    icon: '/fav_icon.png',
+  },
 };
 
 export default function RootLayout({

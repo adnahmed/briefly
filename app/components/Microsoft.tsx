@@ -8,7 +8,7 @@ export const Microsoft = ({
 }) => {
   const [hover, setHover] = useState(false);
   const onMouseEnter: MouseEventHandler<SVGSVGElement> = (e) => {
-    setHover(true);
+    setHover(false);
   };
   const onMouseLeave: MouseEventHandler<SVGSVGElement> = (e) => {
     setHover(false);
@@ -29,6 +29,7 @@ export const Microsoft = ({
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       xmlns="http://www.w3.org/2000/svg"
+      className="min-h-full"
       width="176"
       height="38"
       viewBox="0 0 176 38"

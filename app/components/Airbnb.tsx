@@ -11,7 +11,7 @@ export const Airbnb = ({
       xmlns="http://www.w3.org/2000/svg"
       width="176"
       height="55"
-      className="fill-[#FF5A5F] hover:fill-[#001428] transition duration-300 ease-in-out"
+      className="fill-[#FF5A5F] hover:fill-[#001428] transition duration-300 ease-in-out min-h-full"
       viewBox="0 0 176 55"
       fill="none"
     >

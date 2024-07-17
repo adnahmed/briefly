@@ -1,9 +1,8 @@
 import Image from "next/image";
 import { BentoSquare } from "../components/Bento";
 import Button from "../components/Button";
-import { GlowingStar } from "../components/GlowingStar";
 import { HeroInputEmail } from "../components/Hero";
-import { Pricing } from "../components/Pricing";
+import { PricingTable } from "../components/PricingTable";
 import { tw } from "../lib/tailwindest";
 const squareSplash = tw.variants({
   base: {
@@ -65,26 +64,7 @@ export default function Page() {
         <BentoSquare type="piggy" />
         <BentoSquare type="cart" />
       </div>
-      <div className="flex flex-col gap-[.34rem] mt-[4rem]">
-        <div className="flex stroke-blue-950 text-blue-950 -tracking-[.04rem] items-center text-[1rem]  justify-center">
-          <GlowingStar />
-          Pricing
-        </div>
-        <div className="flex flex-col justify-center gap-[1rem] ">
-          <div className="text-center items-center font-serif desktop:text-[2.5rem] text-[2.25rem] leading-[2.5625rem] -tracking-[.1rem] font-bold">
-            Choose the right plan for you
-          </div>
-          <div className="text-[#5A6772] text-center text-[1.125rem] leading-[1.665rem] -tracking-[.03375rem]">
-            Save 10% and get all credits upfront!
-          </div>
-        </div>
-      </div>
-      <div className="flex gap-[2.69rem] flex-wrap justify-center mt-[2.88rem]">
-        <Pricing type="starter" />
-        <Pricing type="basic" />
-        <Pricing type="explorer" />
-        <Pricing type="pro" />
-      </div>
+      <PricingTable />
       <div className="font-serif text-bold text-[2.25rem] desktop:text-[3rem] mt-[4.5rem] leading-[2.375rem] -tracking-[.09rem] desktop:leading-[3rem] text-center desktop:-tracking-[.12rem]">
         Achieve
         <span className="text-orange ml-[1rem]">business success</span>

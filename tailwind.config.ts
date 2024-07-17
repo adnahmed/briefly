@@ -1,5 +1,49 @@
 import type { Config } from "tailwindcss";
 import defaultTheme from "tailwindcss/defaultTheme";
+import plugin from "tailwindcss/plugin";
+
+/**
+ * utility class presets
+ */
+function _presets() {
+  const shapes = ["circle", "ellipse"];
+  const pos = {
+    c: "center",
+    t: "top",
+    b: "bottom",
+    l: "left",
+    r: "right",
+    tl: "top left",
+    tr: "top right",
+    bl: "bottom left",
+    br: "bottom right",
+  };
+  let result: Record<string, string> = {};
+  for (const shape of shapes)
+    for (const [posName, posValue] of Object.entries(pos))
+      result[`${shape}-${posName}`] = `${shape} at ${posValue}`;
+
+  return result;
+}
+
+const radialGradientPlugin = plugin(
+  ({ matchUtilities, theme }) => {
+    matchUtilities(
+      {
+        // map to bg-radient-[*]
+        "bg-radient": (value) => ({
+          "background-image": `radial-gradient(${value},var(--tw-gradient-stops))`,
+        }),
+      },
+      { values: theme("radialGradients") },
+    );
+  },
+  {
+    theme: {
+      radialGradients: _presets(),
+    },
+  },
+);
 
 const config: Config = {
   content: [
@@ -186,8 +230,11 @@ const config: Config = {
         sans: ["var(--font-dm-sans)", ...defaultTheme.fontFamily.sans],
         serif: ["var(--font-host-grotesk)", ...defaultTheme.fontFamily.serif],
       },
+      animation: {
+        "spin-slow": "spin 3.2s linear infinite",
+      },
     },
   },
-  plugins: [],
+  plugins: [radialGradientPlugin],
 };
 export default config;

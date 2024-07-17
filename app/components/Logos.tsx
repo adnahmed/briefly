@@ -2,19 +2,16 @@
 import Image from "next/image";
 import { MouseEventHandler } from "react";
 import { useBreakpoint } from "../lib/useBreakpoint";
-import { Airbnb } from "./Airbnb";
 import Button from "./Button";
 import { Discord } from "./Discord";
 import { Instagram } from "./Instagram";
 import { Linkedin } from "./Linkedin";
 import { Microsoft } from "./Microsoft";
-import { Spotify } from "./Spotify";
 import { XTwitter } from "./XTwitter";
 type LogoType =
   | "microsoft"
-  | "airbnb"
-  | "spotify"
   | "instagram"
+  | "versal"
   | "x"
   | "discord"
   | "linkedin";
@@ -28,10 +25,6 @@ export const Logos = ({
   switch (type) {
     case "microsoft":
       return <Microsoft onClick={onClick} />;
-    case "airbnb":
-      return <Airbnb onClick={onClick} />;
-    case "spotify":
-      return <Spotify onClick={onClick} />;
     case "instagram":
       return <Instagram onClick={onClick} />;
     case "x":
@@ -40,6 +33,15 @@ export const Logos = ({
       return <Discord onClick={onClick} />;
     case "linkedin":
       return <Linkedin onClick={onClick} />;
+    default:
+      return (
+        <div
+          style={{
+            backgroundImage: `url(/${type}.png)`,
+          }}
+          className="flex justify-center items-center bg-contain bg-no-repeat bg-center w-[156px]  min-h-[105px]"
+        ></div>
+      );
   }
 };
 
@@ -68,7 +70,7 @@ export const TargetLogo = ({
     height = 250;
   }
   return (
-    <div className="px-[1.5rem]  relative flex flex-col-reverse desktop:flex-col items-center desktop:items-start overflow-hidden bg-[#99CCFF] desktop:w-[62rem] screen:w-[63.86rem] desktop:h-[18.9rem] desktop:px-[3rem] screen:px-[3.09rem] py-[2.375rem] desktop:py-[2.44625rem] gap-[.625rem] rounded-[2rem] desktop:rounded-[2.06rem]">
+    <div className="px-[1.5rem] relative flex flex-col-reverse desktop:flex-col items-center desktop:items-start overflow-hidden bg-[#99CCFF] desktop:w-[62rem] screen:w-[63.86rem] desktop:h-[18.9rem] desktop:px-[3rem] screen:px-[3.09rem] py-[2.375rem] desktop:py-[2.44625rem] gap-[.625rem] rounded-[2rem] desktop:rounded-[2.06rem]">
       <div className="flex flex-col gap-[1rem] items-start desktop:h-[5rem] desktop:w-[26rem]">
         <span className="text-[1.5rem] leading-[2.5625rem] -tracking-[.06rem] tablet:text-[2.5rem] desktop:text-[2.575rem] desktop:leading-[2.63938rem]  font-serif font-bold tablet:leading-[2.5625rem] desktop:-tracking-[.103rem] tablet:-tracking-[.1rem]">
           {title}

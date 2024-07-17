@@ -16,7 +16,7 @@ export const DashboardImage = () => {
 
   return (
     <Image
-      className="rounded-2xl  mobile:rounded-r-none tablet:rounded-r-2xl desktop:rounded-r-none min-w-[467.33px] max-h-[352.79px] desktop:max-h-[355.56px] screen:max-h-[567.467px] ml-[7rem] desktop:min-w-[500px] screen:min-w-[798px] desktop:mx-0 mt-[2.5rem] desktop:mt-0 mobile:border-r-0 tablet:border-r-[1rem]  border-orange-200 border-[1rem] desktop:border-r-0"
+      className="rounded-2xl mobile:rounded-r-none tablet:rounded-r-2xl desktop:rounded-r-none min-w-[467.33px] max-h-[352.79px] desktop:max-h-[355.56px] screen:max-h-[567.467px] ml-[6rem] tablet:ml-0 desktop:ml-[7rem] desktop:min-w-[500px] screen:min-w-[798px] desktop:mx-0 mt-[2.5rem] desktop:mt-0 mobile:border-r-0 tablet:border-r-[1rem]  border-orange-200 border-[1rem] desktop:border-r-0"
       src={"/Dashboard.png"}
       width={width}
       height={height}

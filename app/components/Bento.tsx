@@ -1,4 +1,5 @@
 "use client";
+import { Tilt } from "@jdion/tilt-react";
 import Image from "next/image";
 import { tw } from "../lib/tailwindest";
 import { useBreakpoint } from "../lib/useBreakpoint";
@@ -13,10 +14,7 @@ const square = tw.variants({
   base: {
     position: "relative",
     overflow: "overflow-hidden",
-    // maxHeight: "max-h-[22.875rem]",
-    "@desktop": {
-      maxHeight: "desktop:max-h-[35rem]",
-    },
+    minHeight: "min-h-full",
     display: "flex",
     flexDirection: "flex-col",
     borderRadius: "rounded-2xl",
@@ -466,7 +464,21 @@ export const BentoSquare = ({
       break;
   }
   return (
-    <div className={bentoContainer.class({ type })} dir="ltr">
+    <Tilt
+      className={`${bentoContainer.class({ type })} snap-center`}
+      dir="ltr"
+      options={{
+        reverse: false,
+        max: 15,
+        perspective: 1800,
+        easing: "cubic-bezier(.03,.98,.52,.99)",
+        scale: 1.05,
+        speed: 2000,
+        transition: true,
+        axis: null,
+        reset: true,
+      }}
+    >
       <div className={square.class({ type })}>
         <div className={squareSplash.class({ type })}></div>
         <Image
@@ -484,6 +496,6 @@ export const BentoSquare = ({
           <span className={bento_desc.class({ type })}>{description}</span>
         </div>
       </div>
-    </div>
+    </Tilt>
   );
 };
